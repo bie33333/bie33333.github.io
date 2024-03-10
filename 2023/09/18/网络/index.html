@@ -15,15 +15,15 @@
 <meta property="og:site_name" content="瘪三 的个人博客">
 <meta property="og:description" content="TCP&#x2F;IP 网络模型有哪几层？应用层最上层的，也是我们能直接接触到的就是应用层（Application Layer），我们电脑或手机使用的应用软件都是在应用层实现。那么，当两个不同设备的应用需要通信的时候，应用就把应用数据传给下一层，也就是传输层。 应用层只需要专注于为用户提供应用功能，比如 HTTP、FTP、Telnet、DNS、SMTP等。 应用层是不用去关心数据是如何传输的，就类">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82.png">
-<meta property="og:image" content="http://example.com/%E7%BD%91%E7%BB%9C/TCP%E6%AE%B5.png">
-<meta property="og:image" content="http://example.com/%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82.png">
+<meta property="og:image" content="http://example.com/images/%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82.png">
+<meta property="og:image" content="http://example.com/images/%E7%BD%91%E7%BB%9C/TCP%E6%AE%B5.png">
+<meta property="og:image" content="http://example.com/images/%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82.png">
 <meta property="article:published_time" content="2023-09-18T06:15:11.000Z">
-<meta property="article:modified_time" content="2024-03-10T09:07:14.514Z">
+<meta property="article:modified_time" content="2024-03-10T09:15:58.877Z">
 <meta property="article:author" content="bie33333">
 <meta property="article:tag" content="网络">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82.png">
+<meta name="twitter:image" content="http://example.com/images/%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82.png">
   
     <link rel="alternative" href="/atom.xml" title="瘪三 的个人博客" type="application/atom+xml">
   
@@ -186,19 +186,19 @@
 <h3 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h3><p>应用层的数据包会传给传输层，<strong>传输层</strong>（<em>Transport Layer</em>）是为应用层提供网络支持的</p>
 <span id="more"></span>
 
-<p><img src="/./%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82.png" alt="img"></p>
+<p><img src="/../images/%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82.png" alt="img"></p>
 <p>在传输层会有两个传输协议，分别是 TCP 和 UDP。</p>
 <p>TCP 的全称叫传输控制协议（<em>Transmission Control Protocol</em>），大部分应用使用的正是 TCP 传输层协议，比如 HTTP 应用层协议。TCP 相比 UDP 多了很多特性，比如流量控制、超时重传、拥塞控制等，这些都是为了保证数据包能可靠地传输给对方。</p>
 <p>UDP 相对来说就很简单，简单到只负责发送数据包，不保证数据包是否能抵达对方，但它实时性相对更好，传输效率也高。当然，UDP 也可以实现可靠传输，把 TCP 的特性在应用层上实现就可以，不过要实现一个商用的可靠 UDP 传输协议，也不是一件简单的事情。</p>
 <p>应用需要传输的数据可能会非常大，如果直接传输就不好控制，因此当传输层的数据包大小超过 MSS（TCP 最大报文段长度） ，就要将数据包分块，这样即使中途有一个分块丢失或损坏了，只需要重新发送这一个分块，而不用重新发送整个数据包。在 TCP 协议中，我们把每个分块称为一个 <strong>TCP 段</strong>（<em>TCP Segment</em>）。</p>
-<p><img src="/./%E7%BD%91%E7%BB%9C/TCP%E6%AE%B5.png" alt="img"></p>
+<p><img src="/../images/%E7%BD%91%E7%BB%9C/TCP%E6%AE%B5.png" alt="img"></p>
 <p>当设备作为接收方时，传输层则要负责把数据包传给应用，但是一台设备上可能会有很多应用在接收或者传输数据，因此需要用一个编号将应用区分开来，这个编号就是<strong>端口</strong>。</p>
 <p>比如 80 端口通常是 Web 服务器用的，22 端口通常是远程登录服务器用的。而对于浏览器（客户端）中的每个标签栏都是一个独立的进程，操作系统会为这些进程分配临时的端口号。</p>
 <p>由于传输层的报文中会携带端口号，因此接收方可以识别出该报文是发送给哪个应用。</p>
 <h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><p>传输层可能大家刚接触的时候，会认为它负责将数据从一个设备传输到另一个设备，事实上它并不负责。</p>
 <p>实际场景中的网络环节是错综复杂的，中间有各种各样的线路和分叉路口，如果一个设备的数据要传输给另一个设备，就需要在各种各样的路径和节点进行选择，而传输层的设计理念是简单、高效、专注，如果传输层还负责这一块功能就有点违背设计原则了。</p>
 <p>也就是说，我们不希望传输层协议处理太多的事情，只需要服务好应用即可，让其作为应用间数据传输的媒介，帮助实现应用到应用的通信，而实际的传输功能就交给下一层，也就是<strong>网络层</strong>（<em>Internet Layer</em>）。</p>
-<p><img src="/./%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82.png" alt="img"></p>
+<p><img src="/../images/%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82.png" alt="img"></p>
 <p>网络层最常使用的是 IP 协议（<em>Internet Protocol</em>），IP 协议会将传输层的报文作为数据部分，再加上 IP 包头组装成 IP 报文，如果 IP 报文大小超过 MTU（以太网中一般为 1500 字节）就会<strong>再次进行分片</strong>，得到一个即将发送到网络的 IP 报文。</p>
 
       
