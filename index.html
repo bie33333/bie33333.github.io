@@ -153,6 +153,145 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Shiloh的春招八股文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/03/10/Shiloh%E7%9A%84%E6%98%A5%E6%8B%9B%E5%85%AB%E8%82%A1%E6%96%87/">Shiloh的春招八股文</a>
+    </h1>
+  
+
+        
+        <a href="/2024/03/10/Shiloh%E7%9A%84%E6%98%A5%E6%8B%9B%E5%85%AB%E8%82%A1%E6%96%87/" class="archive-article-date">
+  	<time datetime="2024-03-10T09:21:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="0-JDK-常用包？"><a href="#0-JDK-常用包？" class="headerlink" title="0.JDK 常用包？"></a>0.JDK 常用包？</h1><ol>
+<li><strong>java.lang</strong>：<ul>
+<li>提供了 Java 语言的核心类，如基本数据类型的包装类、字符串类、异常类等。</li>
+<li>包含了 Java 中最基本和最常用的类和接口，被自动导入到每个 Java 源文件中。</li>
+</ul>
+</li>
+<li><strong>java.util</strong>：<ul>
+<li>提供了许多实用的工具类和数据结构，如集合框架、日期时间类、随机数生成器等。</li>
+<li>包含了 <code>Collection</code> 框架、<code>Map</code> 接口、<code>Iterator</code> 接口等常用类和接口。</li>
+</ul>
+</li>
+<li><strong>java.io</strong>：<ul>
+<li>提供了用于文件和流操作的类和接口，如文件读写、序列化、网络通信等。</li>
+<li>包含了文件输入输出流、对象输入输出流、字节缓冲流、字符缓冲流等类。</li>
+</ul>
+</li>
+<li><strong>java.net</strong>：<ul>
+<li>提供了用于网络编程的类和接口，如 Socket、ServerSocket、URL、URLConnection 等。</li>
+<li>支持 TCP&#x2F;IP 和 UDP 协议的网络通信，可以实现客户端和服务器之间的通信。</li>
+</ul>
+</li>
+<li><strong>java.nio</strong>：<ul>
+<li>提供了基于通道和缓冲区的新 I&#x2F;O（NIO）API，支持非阻塞 I&#x2F;O 操作。</li>
+<li>提供了更高效的 I&#x2F;O 操作方式，适用于需要处理大量并发连接的网络应用程序。</li>
+</ul>
+</li>
+<li><strong>java.util.concurrent</strong>：<ul>
+<li>提供了并发编程的支持类和接口，如线程池、并发集合、原子类等。</li>
+<li>包含了 <code>Executor</code>、<code>ThreadPoolExecutor</code>、<code>ConcurrentHashMap</code> 等用于处理多线程并发的工具类。</li>
+</ul>
+</li>
+<li><strong>java.awt</strong> 和 <strong>javax.swing</strong>：<ul>
+<li>提供了用于图形用户界面（GUI）开发的类和接口，如窗口、组件、布局管理器等。</li>
+<li>支持创建基本的窗口、按钮、标签等组件，并提供了丰富的事件处理机制。</li>
+</ul>
+</li>
+<li><strong>java.sql</strong>：<ul>
+<li>提供了 JDBC（Java Database Connectivity）API，用于与关系型数据库进行交互。</li>
+<li>包含了 <code>Connection</code>、<code>Statement</code>、<code>ResultSet</code> 等接口，用于执行 SQL 查询和更新操作。</li>
+</ul>
+</li>
+</ol>
+<h1 id="1-Collections-常见集合"><a href="#1-Collections-常见集合" class="headerlink" title="1.Collections 常见集合"></a>1.Collections 常见集合</h1><p>常见的集合框架包括<strong>顶层接口</strong><code> Map</code> 和 <code>Collection</code>，以及它们的各种实现类</p>
+<h2 id="1-1-Map"><a href="#1-1-Map" class="headerlink" title="1.1 Map"></a>1.1 Map</h2><ul>
+<li><code>Map</code> 是一种<strong>键值对</strong>的数据结构，它将键映射到值。每个键都必须是唯一的，但值可以重复。</li>
+<li>常见的 Map 实现类包括：<ul>
+<li><code>HashMap</code>：基于<strong>哈希表</strong>的实现，无序的，允许 null 键和 null 值。</li>
+<li><code>TreeMap</code>：基于<strong>红黑树</strong>的实现，按照键的自然顺序或者指定的比较器进行排序。</li>
+<li><code>Hashtable</code>（已弃用）：早期的哈希表实现，类似于 <code>HashMap</code>，但是<strong>线程安全</strong>，不允许 null 键或值。</li>
+<li><code>ConcurrentHashMap</code>：<strong>线程安全</strong>的哈希表实现，支持<strong>高并发</strong>环境下的并发访问。</li>
+<li><code>Properties</code>：<strong>继承自 <code>Hashtable</code><strong>，用于处理</strong>属性文件</strong>，其中的键和值都是字符串类型。</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-2-Collection下有-Set、List、Queue"><a href="#1-2-Collection下有-Set、List、Queue" class="headerlink" title="1.2 Collection下有 Set、List、Queue"></a>1.2 Collection下有 Set、List、Queue</h2><h3 id="1-2-1-Set"><a href="#1-2-1-Set" class="headerlink" title="1.2.1 Set"></a>1.2.1 Set</h3><p>不允许重复元素的集合。</p>
+<ul>
+<li><code>HashSet</code>：基于哈希表的无序集合，不保证迭代顺序。</li>
+<li><code>TreeSet</code>：基于红黑树的有序集合，按照元素的自然顺序或者指定的比较器进行排序。</li>
+<li><code>LinkedHashSet</code>：是 <code>HashSet</code> 的子类，它通过使用链表来维护元素的插入顺序。提供了可预测的迭代顺序，即元素的迭代顺序与插入顺序相同。</li>
+</ul>
+        
+          <a class="article-more-a" href="/2024/03/10/Shiloh%E7%9A%84%E6%98%A5%E6%8B%9B%E5%85%AB%E8%82%A1%E6%96%87/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">八股</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/03/10/Shiloh%E7%9A%84%E6%98%A5%E6%8B%9B%E5%85%AB%E8%82%A1%E6%96%87/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -258,14 +397,6 @@
 
 
 <h2 id="二、SpringBoot特点"><a href="#二、SpringBoot特点" class="headerlink" title="二、SpringBoot特点"></a>二、SpringBoot特点</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1、独立运行的Spring项目</span><br><span class="line">	SpringBoot可以以jar包的形式独立运行，SpringBoot项目只需要通过命令“java-jar xx.jar”即可运行</span><br><span class="line"></span><br><span class="line">2、内嵌Servlet容器</span><br><span class="line">	SpringBoot使用嵌入式的Servlet容器（例如Tomcat等等），应用无需打成WAR包</span><br><span class="line"></span><br><span class="line">3、提供了starter简化Maven的配置</span><br><span class="line">	SpringBoot提供了一系列的starter项目对象模型来简化Maven的配置</span><br><span class="line"></span><br><span class="line">4、提供了大量的自动配置</span><br><span class="line">	SpringBoot提供了大量的默认自动配置，来简化项目的开发，开发人员也可以通过配置文件修改默认配置</span><br><span class="line">	</span><br><span class="line">5、自带应用监控</span><br><span class="line">	SpringBoot可以对正在运行的项目提供监控</span><br><span class="line"></span><br><span class="line">6、无代码生成和XML配置</span><br><span class="line">	SpringBoot不需要任何XML配置即可实现Spring的所有配置。</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="三、创建SpringBoot项目"><a href="#三、创建SpringBoot项目" class="headerlink" title="三、创建SpringBoot项目"></a>三、创建SpringBoot项目</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">第一步、创建SpringBoot项目</span><br></pre></td></tr></table></figure>
-
-<p><img src="/../images/SpringBoot%E6%8C%87%E5%8C%97/20230606151244.png" alt="20230606151244"></p>
-<p><img src="/../images/SpringBoot%E6%8C%87%E5%8C%97/20230606151421.png"></p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">第二步：配置项目的Maven</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2023/09/06/SpringBoot%E6%8C%87%E5%8C%97/#more">more >></a>
         
@@ -281,11 +412,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
         		</li>
       		
 		</ul>
@@ -418,7 +549,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">八股</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -426,7 +561,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
             
             <div class="clearfix"></div>
