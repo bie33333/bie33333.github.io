@@ -15,18 +15,19 @@
 <meta property="og:site_name" content="瘪三 的个人博客">
 <meta property="og:description" content="[TOC] 0.JDK 常用包？ java.lang： 提供了 Java 语言的核心类，如基本数据类型的包装类、字符串类、异常类等。 包含了 Java 中最基本和最常用的类和接口，被自动导入到每个 Java 源文件中。   java.util： 提供了许多实用的工具类和数据结构，如集合框架、日期时间类、随机数生成器等。 包含了 Collection 框架、Map 接口、Iterator 接口等常用">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/Shiloh%E7%9A%84%E6%98%A5%E6%8B%9B%E5%85%AB%E8%82%A1%E6%96%87/image-39-17100667678289.png">
-<meta property="og:image" content="http://example.com/Shiloh%E7%9A%84%E6%98%A5%E6%8B%9B%E5%85%AB%E8%82%A1%E6%96%87/java_jvm_classload_2.png">
-<meta property="og:image" content="http://example.com/Shiloh%E7%9A%84%E6%98%A5%E6%8B%9B%E5%85%AB%E8%82%A1%E6%96%87/java_jvm_classload_3-17100661120963.png">
-<meta property="og:image" content="http://example.com/Shiloh%E7%9A%84%E6%98%A5%E6%8B%9B%E5%85%AB%E8%82%A1%E6%96%87/image-20240310184134981.png">
-<meta property="og:image" content="http://example.com/images/Shiloh%E7%9A%84%E6%98%A5%E6%8B%9B%E5%85%AB%E8%82%A1%E6%96%87/java-thread-x-juc-overview-1-u.png">
+<meta property="og:image" content="https://files.catbox.moe/c1n8e4.png">
+<meta property="og:image" content="https://files.catbox.moe/sqrgfs.png">
+<meta property="og:image" content="https://files.catbox.moe/uktnqm.png">
+<meta property="og:image" content="https://files.catbox.moe/sgo6wq.png">
+<meta property="og:image" content="https://files.catbox.moe/6f3l2i.png">
+<meta property="og:image" content="https://files.catbox.moe/3ck3b2.png">
 <meta property="article:published_time" content="2024-03-10T09:21:42.000Z">
-<meta property="article:modified_time" content="2024-03-11T03:57:10.856Z">
+<meta property="article:modified_time" content="2024-03-11T05:41:54.161Z">
 <meta property="article:author" content="bie33333">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="八股">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/Shiloh%E7%9A%84%E6%98%A5%E6%8B%9B%E5%85%AB%E8%82%A1%E6%96%87/image-39-17100667678289.png">
+<meta name="twitter:image" content="https://files.catbox.moe/c1n8e4.png">
   
     <link rel="alternative" href="/atom.xml" title="瘪三 的个人博客" type="application/atom+xml">
   
@@ -276,7 +277,7 @@
 <h1 id="3-JVM？"><a href="#3-JVM？" class="headerlink" title="3. JVM？"></a>3. JVM？</h1><h2 id="1-工作原理"><a href="#1-工作原理" class="headerlink" title="1 工作原理"></a>1 工作原理</h2><p>JVM Java虚拟机 Java virtual machine</p>
 <p>接收Java源代码并将其<strong>编译</strong>成<strong>字节码</strong>文件（.class文件），然后通过<strong>解释</strong>器将字节码文件转换为本地机器代码执行。</p>
 <p>在不同操作系统上安装不同的JVM，从而实现跨平台的保证。<br>JVM具有即时编译器（Just-In-Time Compiler，JIT），可以将热点代码（频繁执行的代码）编译成本地机器代码，提高程序的执行效率。</p>
-<h2 id="2-jvm的结构：组成部分："><a href="#2-jvm的结构：组成部分：" class="headerlink" title="2 jvm的结构：组成部分："></a>2 jvm的结构：组成部分：</h2><p><img src="/Shiloh%E7%9A%84%E6%98%A5%E6%8B%9B%E5%85%AB%E8%82%A1%E6%96%87/image-39-17100667678289.png" alt="JVM Tutorial - Java Virtual Machine Architecture Explained for Beginners"></p>
+<h2 id="2-jvm的结构：组成部分："><a href="#2-jvm的结构：组成部分：" class="headerlink" title="2 jvm的结构：组成部分："></a>2 jvm的结构：组成部分：</h2><p><img src="https://files.catbox.moe/c1n8e4.png" alt="JVM Tutorial - Java Virtual Machine Architecture Explained for Beginners"></p>
 <h3 id="1-类加载器（Class-Loader）："><a href="#1-类加载器（Class-Loader）：" class="headerlink" title="1.类加载器（Class Loader）："></a>1.类加载器（Class Loader）：</h3><p><strong>类加载器：</strong>负责加载类（.class）文件到VM内存中，并将其转换为Class对象。</p>
 <p>3种类加载器：<strong>启动类</strong>加载器、<strong>扩展类</strong>加载器和<strong>应用程序类</strong>加载器。</p>
 <p>即Bootstrap Class Loader、Extension Class Loader和System Class Loader。</p>
@@ -297,7 +298,7 @@
 <h3 id="5-垃圾回收器（Garbage-Collector）："><a href="#5-垃圾回收器（Garbage-Collector）：" class="headerlink" title="5.垃圾回收器（Garbage Collector）："></a>5.垃圾回收器（Garbage Collector）：</h3><p>负责回收堆内存中不再被使用的对象，释放资源</p>
 <p><strong>GC垃圾回收器：</strong>JVM还包括垃圾回收器（Garbage Collector），负责自动回收不再使用的内存空间，防止内存泄漏和提高内存利用率。</p>
 <h2 id="3-类加载"><a href="#3-类加载" class="headerlink" title="3.类加载"></a>3.类加载</h2><h3 id="类加载的的生命周期"><a href="#类加载的的生命周期" class="headerlink" title="类加载的的生命周期"></a>类加载的的生命周期</h3><p>类加载的过程包括了<strong>加载、验证、准备、解析、初始化</strong>五个阶段</p>
-<p><img src="/Shiloh%E7%9A%84%E6%98%A5%E6%8B%9B%E5%85%AB%E8%82%A1%E6%96%87/java_jvm_classload_2.png" alt="img"></p>
+<p><img src="https://files.catbox.moe/sqrgfs.png" alt="img"></p>
 <ul>
 <li>加载（Loading）: 查找并加载类的字节码文件到内存中</li>
 <li>连接 <ul>
@@ -310,7 +311,7 @@
 <li>使用（Utilization）： 类访问方法区内的数据结构的接口， 对象是Heap区的数据</li>
 <li>卸载(Unloading)： 结束生命周期</li>
 </ul>
-<h3 id="类加载器的层次"><a href="#类加载器的层次" class="headerlink" title="类加载器的层次?"></a>类加载器的层次?</h3><p><img src="/Shiloh%E7%9A%84%E6%98%A5%E6%8B%9B%E5%85%AB%E8%82%A1%E6%96%87/java_jvm_classload_3-17100661120963.png" alt="img"></p>
+<h3 id="类加载器的层次"><a href="#类加载器的层次" class="headerlink" title="类加载器的层次?"></a>类加载器的层次?</h3><p><img src="https://files.catbox.moe/uktnqm.png" alt="img"></p>
 <p><strong>启动类加载器</strong>: Bootstrap ClassLoader，负责加载存放在JDK\jre\lib(JDK代表JDK的安装目录，下同)下，或被-Xbootclasspath参数指定的路径中的，并且能被虚拟机识别的类库(如rt.jar，所有的java.*开头的类均被Bootstrap ClassLoader加载)。启动类加载器是无法被Java程序直接引用的。</p>
 <p><strong>扩展类加载器</strong>: Extension ClassLoader，该加载器由<code>sun.misc.Launcher$ExtClassLoader</code>实现，它负责加载JDK\jre\lib\ext目录中，或者由java.ext.dirs系统变量指定的路径中的所有类库(如javax.*开头的类)，开发者可以直接使用扩展类加载器。</p>
 <p><strong>应用程序类加载器</strong>: Application ClassLoader，该类加载器由<code>sun.misc.Launcher$AppClassLoader</code>来实现，它负责加载用户类路径(ClassPath)所指定的类，开发者可以直接使用该类加载器，如果应用程序中没有自定义过自己的类加载器，一般情况下这个就是程序中默认的类加载器。</p>
@@ -331,7 +332,7 @@
 <li>如果<code>BootStrapClassLoader</code>加载失败(例如在<code>$JAVA_HOME/jre/lib</code>里未查找到该class)，会使用<code>ExtClassLoader</code>来尝试加载；</li>
 <li>若<code>ExtClassLoader</code>也加载失败，则会使用<code>AppClassLoader</code>来加载，如果<code>AppClassLoader</code>也加载失败，则会报出异常<code>ClassNotFoundException</code>。</li>
 </ol>
-<h2 id="4-运行时数据区（jvm内存区）"><a href="#4-运行时数据区（jvm内存区）" class="headerlink" title="4. 运行时数据区（jvm内存区）"></a>4. 运行时数据区（jvm内存区）</h2><p><img src="/Shiloh%E7%9A%84%E6%98%A5%E6%8B%9B%E5%85%AB%E8%82%A1%E6%96%87/image-20240310184134981.png" alt="image-20240310184134981"></p>
+<h2 id="4-运行时数据区（jvm内存区）"><a href="#4-运行时数据区（jvm内存区）" class="headerlink" title="4. 运行时数据区（jvm内存区）"></a>4. 运行时数据区（jvm内存区）</h2><p><img src="https://files.catbox.moe/sgo6wq.png" alt="image-20240310184134981"></p>
 <ul>
 <li><strong>线程共享</strong>：<code>方法区</code>、<code>堆</code>、 <del>堆外内存</del>（Java7的永久代或JDK8的元空间、代码缓存）</li>
 <li><strong>线程私有</strong>：<code>程序计数器</code>、<code>虚拟机栈</code>、<code>本地方法区</code></li>
@@ -391,6 +392,7 @@
 <p>引用计数法难以处理循环引用，两个对象出现循环引用的情况下，此时引用计数器永远不为 0，导致无法对它们进行回收，可能会造成内存泄露。</p>
 <p>正因为循环引用的存在，因此 Java 虚拟机不使用引用计数算法。</p>
 <h4 id="可达性分析算法？"><a href="#可达性分析算法？" class="headerlink" title="可达性分析算法？"></a>可达性分析算法？</h4><p>先确定一些不可能别回收的对象作为GC root对象，然后以GC root作为起始节点，从这些节点开始向下搜索，去寻找它的直接或间接的引用对象，当遍历完后，如果发现有一些对象不可达，就认为这些对象已经没有用了，需要被回收。在垃圾回收时，会暂停所有用户线程，然后从GCroot根节点开始往下搜索，可达的对象保留，不可达的对象就会回收掉。<br>GC root对象一般指虚拟机栈里面的引入对象，本地方法栈里面的引用对象。</p>
+<p><img src="https://files.catbox.moe/6f3l2i.png" alt="image"></p>
 <h2 id="垃圾收集算法？"><a href="#垃圾收集算法？" class="headerlink" title="垃圾收集算法？"></a>垃圾收集算法？</h2><ol>
 <li>标记清除：<br>标记要回收的对象，然后统一回收，但是标记，和清除效率都低，会产生大量不连续的内存碎片，导致之后程序在分配较大对象时，由于没有充分连续内存，而提前触发一次Full GC</li>
 <li>复制算法：<br>复制算法将内存容量分为两部分，只使用其中一块，一块用完后，将还存活的对象复制到另一块。但是内存代价太高。于是将内存按照8:1:1分为三部分，8为Eden区，对象优先分配Eden区内存，其余两块为 Survior区，Eden区满时，就会将还存活的对象赋值到Survior区，然后清除Eden区，Survivor区内存不够时，就会通过分配担保机制将这些对象赋值到老年代。</li>
@@ -404,7 +406,7 @@
 <li><strong>原子操作（Atomic Operations）</strong>：如AtomicInteger、AtomicLong等，提供了一系列原子性操作，可以无锁地处理一些简单的同步问题。</li>
 <li><strong>线程池（Executors）</strong>：提供了一系列工厂方法来创建不同类型的线程池，例如固定大小的线程池、可缓存的线程池、计划任务的线程池等。通过线程池，可以有效地管理和重用线程，提高程序的性能。</li>
 </ul>
-<h4 id=""><a href="#" class="headerlink" title=""></a><img src="/../images/Shiloh%E7%9A%84%E6%98%A5%E6%8B%9B%E5%85%AB%E8%82%A1%E6%96%87/java-thread-x-juc-overview-1-u.png" alt="image"></h4><h2 id="什么是CAS"><a href="#什么是CAS" class="headerlink" title="什么是CAS?"></a>什么是CAS?</h2><p>CAS的全称为Compare-And-Swap，直译就是对比交换。是一条CPU的原子指令，其作用是让CPU先进行比较两个值是否相等，然后原子地更新某个位置的值，经过调查发现，其实现方式是基于硬件平台的汇编指令，就是说CAS是靠硬件实现的，JVM只是封装了汇编调用，那些AtomicInteger类便是使用了这些封装后的接口。   简单解释：CAS操作需要输入两个数值，一个旧值(期望操作前的值)和一个新值，在操作期间先比较下在旧值有没有发生变化，如果没有发生变化，才交换成新值，发生了变化则不交换。</p>
+<h4 id=""><a href="#" class="headerlink" title=""></a><img src="https://files.catbox.moe/3ck3b2.png" alt="image"></h4><h2 id="什么是CAS"><a href="#什么是CAS" class="headerlink" title="什么是CAS?"></a>什么是CAS?</h2><p>CAS的全称为Compare-And-Swap，直译就是对比交换。是一条CPU的原子指令，其作用是让CPU先进行比较两个值是否相等，然后原子地更新某个位置的值，经过调查发现，其实现方式是基于硬件平台的汇编指令，就是说CAS是靠硬件实现的，JVM只是封装了汇编调用，那些AtomicInteger类便是使用了这些封装后的接口。   简单解释：CAS操作需要输入两个数值，一个旧值(期望操作前的值)和一个新值，在操作期间先比较下在旧值有没有发生变化，如果没有发生变化，才交换成新值，发生了变化则不交换。</p>
 <p>CAS操作是原子性的，所以多线程并发使用CAS更新数据时，可以不使用锁。JDK中大量使用了CAS来更新数据而防止加锁(synchronized 重量级锁)来保持原子更新。</p>
 <p>相信sql大家都熟悉，类似sql中的条件更新一样：update set id&#x3D;3 from table where id&#x3D;2。因为单条sql执行具有原子性，如果有多个线程同时执行此sql语句，只有一条能更新成功。</p>
 <h4 id="CAS使用示例，结合AtomicInteger给出示例"><a href="#CAS使用示例，结合AtomicInteger给出示例" class="headerlink" title="# CAS使用示例，结合AtomicInteger给出示例?"></a><a href="#cas%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B-%E7%BB%93%E5%90%88atomicinteger%E7%BB%99%E5%87%BA%E7%A4%BA%E4%BE%8B">#</a> CAS使用示例，结合AtomicInteger给出示例?</h4><p>如果不使用CAS，在高并发下，多线程同时修改一个变量的值我们需要synchronized加锁(可能有人说可以用Lock加锁，Lock底层的AQS也是基于CAS进行获取锁的)。</p>
@@ -483,7 +485,6 @@
 <li>CachedThreadPool<br>线程池中线程的数量是动态的，任务的时候就创建新线程执行，一段时间没任务，那就销毁线程。</li>
 <li>ScheduledThreadPool</li>
 </ol>
-<p>- </p>
 <h1 id="重载和重写的区别"><a href="#重载和重写的区别" class="headerlink" title="重载和重写的区别"></a>重载和重写的区别</h1><p>重载 是发⽣在同⼀个类中，具有相同的⽅法名，但是有不同的参数，参数的个数不⼀样、参数的位置不⼀样，这就</p>
 <p>叫重载，常见的就⽐如构造⽅法，有有参构造和⽆参构造。</p>
 <p>重写是发⽣在当⼦类继承⽗类时，对⽗类中的⼀些⽅法根据⾃⼰的需求进⾏重写操作</p>
