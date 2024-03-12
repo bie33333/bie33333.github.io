@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: SpringBoot | 瘪三 的个人博客</title>
+  <title>Preparation For HSBC | 瘪三 的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="瘪三 的个人博客">
-<meta property="og:url" content="http://example.com/tags/SpringBoot/index.html">
+  <meta name="description" content="\1. 多线程中synchronize关键字的认识 synchronize关键字是Java中用于实现同步的关键字，它可以保证多个线程在访问共享资源时，同一时刻只有一个线程能够访问。synchronize关键字可以修饰方法或者作为代码块的一部分。当一个线程访问一个使用synchronize修饰的方法或代码块时，它会获取到一个锁，其他线程需要等待这个锁被释放后才能继续访问。这样可以避免多线程环境下的数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Preparation For HSBC">
+<meta property="og:url" content="http://example.com/2024/03/13/HSBC/index.html">
 <meta property="og:site_name" content="瘪三 的个人博客">
+<meta property="og:description" content="\1. 多线程中synchronize关键字的认识 synchronize关键字是Java中用于实现同步的关键字，它可以保证多个线程在访问共享资源时，同一时刻只有一个线程能够访问。synchronize关键字可以修饰方法或者作为代码块的一部分。当一个线程访问一个使用synchronize修饰的方法或代码块时，它会获取到一个锁，其他线程需要等待这个锁被释放后才能继续访问。这样可以避免多线程环境下的数">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-03-12T16:02:42.000Z">
+<meta property="article:modified_time" content="2024-03-12T16:11:28.410Z">
 <meta property="article:author" content="bie33333">
-<meta property="article:tag" content="程序开发, 生活">
+<meta property="article:tag" content="面经">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="瘪三 的个人博客" type="application/atom+xml">
@@ -151,64 +155,222 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-HSBC" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/06/SpringBoot%E6%8C%87%E5%8C%97/" class="archive-article-date">
-  	<time datetime="2023-09-06T04:22:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/06/SpringBoot%E6%8C%87%E5%8C%97/">SpringBoot指北</a>
+    <h1 class="article-title" itemprop="name">
+      Preparation For HSBC
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2024/03/13/HSBC/" class="archive-article-date">
+  	<time datetime="2024-03-12T16:02:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>\1. 多线程中synchronize关键字的认识 synchronize关键字是Java中用于实现同步的关键字，它可以保证多个线程在访问共享资源时，同一时刻只有一个线程能够访问。synchronize关键字可以修饰方法或者作为代码块的一部分。当一个线程访问一个使用synchronize修饰的方法或代码块时，它会获取到一个锁，其他线程需要等待这个锁被释放后才能继续访问。这样可以避免多线程环境下的数据不一致问题。</p>
+<p> \2. final关键字 final关键字在Java中有以下几个用途： - 修饰类：表示该类<strong>不能被继承</strong>； - 修饰方法：表示该方法<strong>不能被子类重写</strong>； - 修饰变量：表示该变量的值<strong>只能被赋值一次，即常量</strong>。 </p>
+<p>\3. spring cloud怎么做的微服务拆分，以及怎么做的分流 	</p>
+<p>Spring Cloud是一个基于Spring Boot的微服务框架，它提供了一系列的工具和组件来帮助我们快速构建分布式系统。在Spring Cloud中，可以通过以下方式进行微服务的拆分和分流：<br>微服务拆分：通过将不同的业务模块<strong>拆分成独立的子项目</strong>，每个子项目都有自己的数据库和业务逻辑。这样可以降低系统的复杂度，提高开发效率和可维护性。<br>分流：在Spring Cloud中，可以使用<strong>Ribbon、Feign</strong>等组件来实现<strong>负载均衡和分流</strong>。这些组件可以帮助我们将请求分发到不同的服务实例上，从而提高系统的可用性和性能。例如，Ribbon可以根据预设的规则（如轮询、随机等）将请求分发到不同的服务实例上，而Feign则可以通过声明式的HTTP客户端来实现负载均衡。</p>
+<ol>
+<li><p>你在项目中遇到了什么问题，你是怎么解决的？ 这个问题的回答取决于你个人的经历。你可以选择一个你曾经在项目中遇到的问题，描述问题的背景、影响以及你采取的措施来解决这个问题。例如，如果你遇到了性能瓶颈，你可以讲述你是如何通过分析性能指标、优化代码和调整系统配置来提高性能的。</p>
+</li>
+<li><p>你是否了解NIO？ 是的，我了解NIO（New Input&#x2F;Output）。NIO是Java中的一种输入&#x2F;输出处理方式，它提供了与传统I&#x2F;O不同的方法。NIO主要有以下几个特点： - 非阻塞I&#x2F;O：可以同时处理多个连接，而不需要为每个连接分配一个线程。 - 缓冲区（Buffer）：用于存储和传输数据。 - 通道（Channel）：表示打开到实体（如文件或套接字）的连接。 </p>
+</li>
+<li><p>你是否了解spring cloud？ 是的，我了解Spring Cloud。Spring Cloud是一个基于Spring Boot的微服务框架，它提供了许多工具和库，用于简化分布式系统的开发。Spring Cloud包括服务发现、配置管理、负载均衡、断路器、网关等多种组件，使得构建微服务架构变得更加容易。 </p>
+</li>
+<li><p>你用spring cloud gateway实现过什么功能？ Spring Cloud Gateway是Spring Cloud提供的一个API网关，用于路由、限流、安全认证等。我用Spring Cloud Gateway实现过以下功能： - 路由请求到不同的微服务。 - 限流，防止系统过载。 - 安全认证，确保只有授权的请求才能访问特定的服务。 </p>
+</li>
+<li><p>微服务如何部署？ 微服务的部署通常涉及以下几个步骤： - 将微服务打包成容器镜像（如Docker镜像）。 - 使用容器编排工具（如Kubernetes）来管理和部署这些镜像。 - 设置服务发现和负载均衡机制。 - 配置监控和日志收集系统，以便跟踪和诊断问题。</p>
+</li>
+<li><p>数据库查询没走索引是什么原因？ 数据库查询没有走索引可能有以下原因： - 索引未正确创建或已损坏。 - 查询条件不是索引列。 - 使用了函数或表达式，导致索引失效。 - 数据库统计信息过时，导致优化器选择了全表扫描。 - 查询返回大量数据，优化器认为全表扫描更快。</p>
+</li>
+</ol>
+<p>****DevOps是一种重视软件开发人员和IT运维技术人员之间沟通与协作的文化和实践，旨在加速软件交付的速度和提高质量****。 DevOps强调的是通过自动化、持续集成（CI）、持续交付（CD）以及有效的沟通来整合软件开发和运维的过程。它的目标是创建一个能够快速响应市场变化和客户需求的灵活环境。在DevOps实践中，开发、测试和运维团队紧密合作，以确保软件从编码到部署的每个阶段都尽可能地自动化和无缝对接，最终实现快速、可靠的软件发布。 ****Docker是一个开源的应用容器引擎****。 它允许开发者将应用及其依赖打包成一个标准化的单元，即容器，这样可以确保应用在任何环境中都能够一致地运行。而Kubernetes（通常简称为k8s）是一个容器编排系统，用于自动部署、扩展和管理容器化应用。它可以看作是对Docker的补充，通过Kubernetes，可以大规模地管理和协调多个Docker容器，实现更加复杂的应用部署和管理。 ****Scrum是一种迭代式增量软件开发过程，属于敏捷开发方法的一种框架****。 它通过设定时间固定的迭代周期（称为冲刺或Sprint），使开发团队能够集中精力完成一组既定的开发任务。Scrum中定义了明确的角色，包括Scrum主管、产品负责人和开发团队，每个角色都有其独特的职责和作用。通过频繁的评估和反馈机制，Scrum旨在提高开发过程的透明度并促进团队合作，以便更快地交付高质量的软件产品。 综上所述，对于您面试的JAVA开发职位，理解DevOps文化、熟悉Docker和Kubernetes技术以及Scrum方法论都是非常有价值的。这些知识点不仅能帮助您更好地融入敏捷开发环境，还能提升您在软件交付过程中的协作和效率。</p>
+<p>数据库的三范式（3NF）是数据库设计的一个标准，用于减少数据冗余和改善数据完整性。三范式建立在两个更早的范式之上：第一范式（1NF）和第二范式（2NF）。下面是对每个范式的简要解释： 1. 第一范式（1NF）： - 要求表的每一列都是不可分割的基本数据项，即每个字段都是原子性的。 - 表中的所有记录都应该是唯一的，通常通过主键来实现。 2. 第二范式（2NF）： - 在满足1NF的基础上，要求表中的数据不包含部分依赖，即非主键列必须完全依赖于主键。 - 如果一个表有复合主键（由多个字段组成），那么其他字段不能只依赖于这个复合主键的一部分。 3. 第三范式（3NF）： - 在满足2NF的基础上，要求表中的数据不包含传递依赖，即非主键列必须直接依赖于主键，而不是通过其他字段间接依赖。 - 这有助于进一步减少数据冗余，因为每个字段只在一个地方存储，并且在其他地方通过外键引用。 对数据存储的看法： 数据存储是任何信息系统的核心。选择合适的数据存储解决方案对于系统的性能、可扩展性、维护性和成本都至关重要。随着技术的发展，我们有了更多的选择，包括传统的关系型数据库、NoSQL数据库、分布式数据库以及新型的存储技术如对象存储和时间序列数据库等。每种类型的数据库都有其适用的场景，因此在设计系统时需要根据数据的类型、访问模式和业务需求来选择合适的数据库。 数据库未来发展趋势的看法： - 云原生数据库：随着云计算的普及，越来越多的数据库服务将设计为云原生，提供更高的可用性、弹性和自动化管理。 - 多模型数据库：为了处理不同类型的数据和多样化的工作负载，多模型数据库将成为趋势，它们可以同时支持文档、键值、图形等多种数据模型。 - 实时分析和处理：随着物联网和边缘计算的发展，数据库将更多地集成实时数据分析和处理能力，以支持即时决策。 - 自动化和智能化：数据库管理和维护将更加自动化，利用人工智能来优化性能、预防故障和安全威胁。 在实际工作中使用过的数据库： 这个部分取决于你的个人经验。常见的数据库包括MySQL、PostgreSQL、Oracle、Microsoft SQL Server、MongoDB、Redis、Cassandra等。如果你有实际使用过这些或其他数据库的经验，可以根据你的职责和项目需求来描述。例如，你可能在项目中使用MySQL进行CRUD操作，使用Redis作为缓存数据库来提高系统性能，或者使用MongoDB来存储非结构化数据等。</p>
+<p>\1. Spring的加载过程： Spring框架的加载过程主要包括以下几个步骤： - 启动：Spring容器启动时，会读取配置文件（如applicationContext.xml）或者注解配置。 - 实例化Bean：根据配置文件或注解，Spring会实例化需要的Bean对象。 - 依赖注入：Spring会自动将Bean之间的依赖关系进行注入，这个过程可以通过构造函数、Setter方法或者字段注入等方式完成。 - AOP处理：如果配置了AOP（面向切面编程），Spring会在这个阶段进行处理，生成代理对象。 - 初始化：对Bean进行初始化操作，如调用初始化方法等。 - 启动完成：Spring容器启动完成，可以开始使用其中的各种Bean。 2. 红黑树和平衡树： 红黑树是一种自平衡的二叉查找树，它在插入和删除操作时通过旋转和重新着色来保持树的平衡，从而保证了在最坏情况下的时间复杂度为O(log n)。红黑树的特点是每个节点都有一个颜色属性（红色或黑色），并且满足以下性质： - 每个节点或是红色的，或是黑色的。 - 根节点是黑色的。 - 每个叶子节点（NIL节点，空节点）是黑色的。 - 如果一个节点是红色的，则它的两个子节点都是黑色的。 - 对于每个节点，从该节点到其所有后代叶子节点的简单路径上，均包含相同数目的黑色节点。 平衡树是一类自平衡的二叉查找树的总称，它通过在插入和删除操作时进行旋转操作来保持树的平衡。常见的平衡树有AVL树、红黑树、B树等。 3. 平常用什么开发工具： 这个答案因人而异，常见的Java开发工具有IntelliJ IDEA、Eclipse、NetBeans等。你可以根据你的实际使用情况来回答。 4. 快捷键是什么： 同样，这个问题的答案因人而异，取决于你使用的IDE和操作系统。例如，在IntelliJ IDEA中，常用的快捷键有Ctrl+Space（代码补全）、Ctrl+&#x2F;（单行注释&#x2F;取消注释）、Alt+Enter（显示建议操作和修复代码）等。 5. 以前的开发流程是咋样的： 这个问题需要你根据你的实际工作经验来回答。一般来说，开发流程可能包括需求分析、设计、编码、测试、部署和维护等阶段。你可以描述你在这些阶段中的具体工作内容和所使用的工具、方法等。</p>
+<p>\1. 介绍一下在校的项目经验 在回答这个问题时，你可以选择一个或几个你参与过的、最能体现你技术能力和团队合作能力的项目进行介绍。你可以按照以下结构来组织你的回答： - 项目名称 - 你的角色和职责 - 项目的目标和功能 - 你使用的技术栈和工具 - 你在项目中的具体贡献 - 项目的成果或者学到的经验 2. 项目遇到什么问题，如何解决 在描述项目遇到的问题时，选择那些能够展现你解决问题能力的挑战。你可以按照以下步骤来回答： - 问题的描述：简要说明问题的性质和它对项目的影响。 - 解决过程：描述你是如何分析问题、考虑解决方案的。 - 实施解决方案：说明你采取的具体措施，以及在这个过程中你使用了哪些技术或方法。 - 结果：讲述解决方案实施后的结果，以及它如何帮助项目向前推进。 3. 自己的职业规划是什么 在回答职业规划时，你可以从短期和长期两个方面来考虑。短期规划可能包括提升特定技能、获得行业认证或完成特定的项目。长期规划可能是成为某一领域的专家、达到管理层级或创立自己的公司。确保你的规划与申请的职位相关联，并展现出你对个人成长和职业发展的积极态度。 4. 一些Java的技术问题 这个问题可能会涉及Java语言的基础知识点，也可能会涉及到一些高级特性或者最佳实践。以下是一些可能会被问到的问题： - Java中的数据类型有哪些？基本数据类型和引用数据类型的区别是什么？ - 什么是Java的垃圾回收机制？它是如何工作的？ - 解释Java中的异常处理机制。 - Java中同步和并发编程的基本概念是什么？ - 如何在Java中实现多线程？ - Java中集合框架的结构是怎样的？List和Set接口的区别是什么？ - 什么是Java的Stream API？它有什么优势？ - 解释Java中的泛型。 - Java中如何实现单例模式？ 准备这些问题时，不仅要了解概念，还要准备一些代码示例来展示你的知识。希望这些建议能帮助你成功通过面试！祝你好运！</p>
+<p>首先，对于英文自我介绍，你可以准备一个简洁明了的模板，包括你的姓名、教育背景、技能和经验。例如： Hello, my name is [你的名字]. I recently graduated from [你的学校] with a degree in [你的专业]. I have experience in [你的技能或经验，例如编程语言、项目经验等]。 对于他们可能会问到的问题，这通常会围绕你的简历，例如你的项目经验、你的技能等。你可以提前准备一些可能的问题和答案，例如： 1. Describe a project you’ve worked on.（描述你参与过的一个项目。） 2. What was your role in that project?（你在那个项目中的角色是什么？） 3. What did you learn from that project?（你从那个项目中学到了什么？） 4. How would you handle a difficult problem or challenge?（你会如何处理困难的问题或挑战？） 记住，面试是双向的，你也可以问他们问题，例如关于公司的文化、团队结构、你将要参与的项目等。这样可以显示出你对这份工作的热情和认真态度。 最后，面试时要保持自信，即使你的英语不完美，也要尽量表达清楚你的想法。祝你面试成功！</p>
+<p>1.用英语做简单的自我介绍，主要考察口语能力以及灵活应变能力； 2.why HSBC？</p>
+<p>3你觉得自己最大的优点是什么？ 4.你认为离达到teamleader还有哪些需要努力的地方？ 5.介绍一下你认为最有挑战的一个项目</p>
+<ol>
+<li><p>Hello, my name is KMQ, and I am excited to have the opportunity to interview with you today. I will recently graduate from Xidian University with a degree in SoftwareEnginerring. During my studies, I also participated in internships and projects that allowed me to develop practical skills in  Java basis and basic software development. I am passionate about software development and always eager to learn new technologies and improve my skills. </p>
+</li>
+<li><p>I want to work at HSBC because I admire its reputation and global influence. As an internationally renowned bank, HSBC has a wide business network and extensive experience in providing diverse financial services worldwide. I believe working in such a diverse and inclusive environment will provide me valuable learning and growth opportunities. Additionally, I appreciate HSBC’s commitment to sustainable development and social responsibility. I hope to be part of a team that positively impacts society and contributes to achieving its mission and goals.</p>
+</li>
+<li><p>My greatest strength is my ability to quickly learn and adapt to new technologies and environments. I am highly curious and enjoy diving deep into new subjects, which has helped me acquire a broad range of skills in software development. Additionally, I am a team player and enjoy collaborating with others to solve complex problems. </p>
+</li>
+<li><p>To become a successful team leader, I believe I need to work on several areas. Firstly, I should continue to enhance my technical skills and stay updated with the latest industry trends to lead by example. Secondly, I need to develop better communication and interpersonal skills to effectively manage the team and resolve conflicts. Lastly, I must work on my leadership abilities, such as decision-making, problem-solving, and project management, to ensure that the team is motivated, organized, and productive.</p>
+</li>
+<li><p>One of the toughest projects I’ve worked on was building a logistics management system in my intership. It involved creating features like user login, item tracking, and order management. We used Spring Boot as our main tool.</p>
+<p>The challenge was making sure everything worked smoothly, especially when lots of people were using the system at once. We had to figure out ways to keep it fast and reliable. For example, we added a security feature using Redis for user authentication.</p>
+<p>To handle payments, we set up a system with RabbitMQ to notify users when transactions were successful. We also made sure the system could handle more work by using Docker to scale up when needed.</p>
+<p>Overall, this project taught me a lot about problem-solving and teamwork. We had to be creative and work together to overcome obstacles and deliver a great product.</p>
+</li>
+</ol>
+<p>\1. 介绍个人信息 在介绍个人信息时，你可以简要地说明你的姓名、年龄、教育背景（比如你在哪所大学学习了什么专业），以及任何相关的工作经验或技能。例如： “大家好，我叫[你的名字]，今年[你的年龄]岁，毕业于[你的大学名称]，专业是[你的专业]。在校期间，我专注于软件开发和编程技能的学习，并且通过参与多个项目和实习机会，积累了实际的工作经验。” 2. 介绍在校表现 在这一部分，你可以谈谈你在学校的成绩、所获奖项、参与的项目或社团活动等。例如： “在大学期间，我的成绩一直保持在优秀水平，曾获得[具体奖项或荣誉]。除了学术表现，我还积极参与了[具体项目或社团名称]，在其中担任[你的角色]，这些经历帮助我提升了团队合作和项目管理的能力。” 3. 为什么选择汇丰，对汇丰的文化有什么了解？ 在回答这个问题时，你可以提到汇丰银行的全球声誉、职业发展机会、以及对员工的重视等方面。同时，你可以提及汇丰的文化，比如它的核心价值观和对客户服务的承诺。例如： “我选择汇丰是因为它是全球领先的金融机构之一，以其卓越的服务和创新精神而闻名。我对汇丰的文化有一定的了解，特别是它强调的’客户至上’和’诚信合规’的价值观，这与我个人的职业理念非常契合。我相信在汇丰工作不仅能够提供广阔的职业发展空间，还能让我在一个注重道德和责任感的环境中成长。” 4. Java测试题 这个问题可能会包括一些技术问题，用来测试你的Java编程能力。由于你没有提供具体的题目，我无法给出确切的答案。但是，你可以准备一些常见的Java面试题目，如面向对象的概念、Java集合框架、异常处理、多线程等。 5. 毕业设计内容 在这个问题上，你需要简要描述你的毕业设计项目，包括项目的目标、你的角色、所使用的技术和工具，以及项目的成果。例如： “我的毕业设计项目是关于[项目的主题]，目标是[项目的目标]。在这个项目中，我主要负责[你的角色和职责]，使用了[技术和工具]来实现[具体的功能或成果]。通过这个项目，我不仅提高了我的编程技能，还学会了如何在实际环境中解决问题。”</p>
+<ol>
+<li>自我介绍：您好，我叫张三，毕业于XX大学计算机专业，拥有X年的Java开发经验。在校期间，我积极参加各类技术竞赛，曾获得过全国大学生程序设计大赛一等奖。在工作中，我主要负责后端开发，熟悉Java、Spring Boot等技术栈。 </li>
+<li>Java基础知识：Java是一种面向对象的编程语言，具有跨平台、安全、稳定等特点。Java的基本数据类型有整型、浮点型、字符型、布尔型等。Java的流程控制语句有if-else、switch-case、for、while等。Java的面向对象特性包括封装、继承、多态等。</li>
+<li>HashMap原理：HashMap是基于哈希表实现的，它通过将键值对映射到数组的某个位置来存储数据。当发生哈希冲突时，会采用链表或者红黑树来解决。HashMap的主要操作有put、get、remove等。 </li>
+<li>TreeMap：TreeMap是基于红黑树实现的，它可以对键值对进行排序。TreeMap的主要操作有put、get、remove等。 </li>
+<li>JVM和JVM优化工具：JVM是Java虚拟机，它是Java程序运行的环境。JVM优化工具主要有VisualVM、MAT、JProfiler等，它们可以帮助我们分析Java程序的性能瓶颈，提高程序运行效率。 </li>
+<li>ZooKeeper、RabbitMQ等：ZooKeeper是一个分布式协调服务，主要用于解决分布式系统中的配置管理、命名服务、分布式锁等问题。RabbitMQ是一个消息队列服务，主要用于实现系统间的解耦和异步通信。 </li>
+<li>装饰者模式：装饰者模式是一种结构型设计模式，它允许在不改变原有类的基础上，动态地给一个对象添加新的功能。装饰者模式的主要角色有抽象构件、具体构件、抽象装饰者、具体装饰者等。 </li>
+<li>短地址算法：短地址算法通常用于将长网址转换为短网址，以便于分享和传播。常见的短地址算法有哈希算法、自增序列算法等。 </li>
+<li>开源框架源码：我阅读过Spring、MyBatis等开源框架的源码，了解了它们的设计和实现原理。 </li>
+<li>高性能、高可靠性架构设计经验：在之前的工作中，我曾参与过一个大型电商平台的后端架构设计，采用了分布式微服务架构，提高了系统的可扩展性和可用性。 </li>
+<li>熟悉的开源框架源码：我熟悉Spring、MyBatis等开源框架的源码，了解它们的设计和实现原理。 </li>
+<li>上一个工作的工作内容、项目技术以及离职原因：我在上一家公司主要从事后端开发工作，参与了多个项目的开发，涉及的技术有Java、Spring Boot、MySQL等。离职原因是寻求更高的发展机会。 </li>
+<li>数据结构算法代码：请根据具体问题编写相应的代码。</li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面经</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/03/13/HSBC/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2024/03/10/Shiloh%E7%9A%84%E6%98%A5%E6%8B%9B%E5%85%AB%E8%82%A1%E6%96%87/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Shiloh的春招八股文</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -231,9 +393,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
