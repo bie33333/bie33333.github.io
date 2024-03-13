@@ -6,13 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Shiloh的春招八股文 | 瘪三 的个人博客</title>
+  <title>Shiloh的春招八股文 | 的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="[TOC] 0.JDK 常用包？ java.lang： 提供了 Java 语言的核心类，如基本数据类型的包装类、字符串类、异常类等。 包含了 Java 中最基本和最常用的类和接口，被自动导入到每个 Java 源文件中。   java.util： 提供了许多实用的工具类和数据结构，如集合框架、日期时间类、随机数生成器等。 包含了 Collection 框架、Map 接口、Iterator 接口等常用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shiloh的春招八股文">
 <meta property="og:url" content="http://example.com/2024/03/10/Shiloh%E7%9A%84%E6%98%A5%E6%8B%9B%E5%85%AB%E8%82%A1%E6%96%87/index.html">
-<meta property="og:site_name" content="瘪三 的个人博客">
+<meta property="og:site_name" content="的个人博客">
 <meta property="og:description" content="[TOC] 0.JDK 常用包？ java.lang： 提供了 Java 语言的核心类，如基本数据类型的包装类、字符串类、异常类等。 包含了 Java 中最基本和最常用的类和接口，被自动导入到每个 Java 源文件中。   java.util： 提供了许多实用的工具类和数据结构，如集合框架、日期时间类、随机数生成器等。 包含了 Collection 框架、Map 接口、Iterator 接口等常用">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://files.catbox.moe/c1n8e4.png">
@@ -67,14 +67,14 @@
 <meta property="og:image" content="c:/images/db/redis/db-redis-sub-7.svg">
 <meta property="og:image" content="c:/images/db/redis/redis-performance-2.jpeg">
 <meta property="article:published_time" content="2024-03-10T09:21:42.000Z">
-<meta property="article:modified_time" content="2024-03-12T10:00:43.129Z">
+<meta property="article:modified_time" content="2024-03-13T08:44:18.540Z">
 <meta property="article:author" content="bie33333">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="八股">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://files.catbox.moe/c1n8e4.png">
   
-    <link rel="alternative" href="/atom.xml" title="瘪三 的个人博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="的个人博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -570,11 +570,9 @@
 </li>
 <li><p>通过future.get()可以阻塞获取线程执行的方法的返回值。</p>
 </li>
-<li><p>CompletionService接口，CompletionService可以将线程池中所有线程执行任务返回的future对象全部管理起来，可以通过轮训来查看线程是否已经执行完成。<br>ExecutorService executorService &#x3D; Executors.newFixedThreadPool(10);<br>CompletionService<Object> completionService &#x3D; new ExecutorCompletionService&lt;&gt;(executorService);</p>
-</li>
+<li><p>CompletionService接口，CompletionService可以将线程池中所有线程执行任务返回的future对象全部管理起来，可以通过轮训来查看线程是否已经执行完成。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="type">ExecutorService</span> <span class="variable">executorService</span> <span class="operator">=</span> Executors.newFixedThreadPool(<span class="number">10</span>);</span><br><span class="line">   CompletionService&lt;Object&gt; completionService = <span class="keyword">new</span> <span class="title class_">ExecutorCompletionService</span>&lt;&gt;(executorService);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 提交任务</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    completionService.submit(task);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取已完成任务的结果</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        Future&lt;Object&gt; completedFuture = completionService.take();</span><br><span class="line">        <span class="type">Object</span> <span class="variable">result</span> <span class="operator">=</span> completedFuture.get();</span><br><span class="line">        <span class="comment">// 处理任务执行结果</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (InterruptedException | ExecutionException e) &#123;</span><br><span class="line">        <span class="comment">// 处理异常</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
-<p>&#x2F;&#x2F; 提交任务<br>for (int i &#x3D; 0; i &lt; 10; i++) {<br>    completionService.submit(task);<br>}</p>
-<p>&#x2F;&#x2F; 获取已完成任务的结果<br>for (int i &#x3D; 0; i &lt; 10; i++) {<br>    try {<br>        Future<Object> completedFuture &#x3D; completionService.take();<br>        Object result &#x3D; completedFuture.get();<br>        &#x2F;&#x2F; 处理任务执行结果<br>    } catch (InterruptedException | ExecutionException e) {<br>        &#x2F;&#x2F; 处理异常<br>    }<br>}</p>
 <h2 id="线程池？"><a href="#线程池？" class="headerlink" title="线程池？"></a>线程池？</h2><p>好处：</p>
 <ol>
 <li>可以减少线程频繁销毁和创建带来的损耗。</li>
@@ -884,16 +882,63 @@
 <p>当选择了A（可用性）时，系统将始终处理客户端的查询并尝试返回最新的可用的信息版本，即使由于网络分区而无法保证其是最新的。</p>
 <h1 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h1><p>InnoDB是MySQL数据库的一个存储引擎，它是MySQL最流行和使用最广泛的存储引擎之一。InnoDB提供了许多高级功能，包括事务处理、多版本并发控制（MVCC）、行级锁定、外键约束、自动灾难恢复、在线备份等。以下是InnoDB的一些主要特点：</p>
 <ol>
-<li><strong>事务支持</strong>：<br>InnoDB支持事务，这意味着可以确保一组数据库操作要么全部完成，要么全部不发生。事务具有ACID属性（原子性、一致性、隔离性和持久性），这些属性保证了数据的完整性和可靠性。</li>
-<li><strong>MVCC</strong>：<br>InnoDB使用多版本并发控制来提高性能。在读取数据时，InnoDB可以提供数据的一致性视图，而不需要锁定正在被读取的数据。这减少了锁定并提高了多用户环境下的并发性能。</li>
-<li><strong>行级锁定</strong>：<br>InnoDB支持行级锁定，这意味着在多用户环境中，当多个事务同时修改不同的行时，锁定可以更精细，从而减少锁定争用并提高性能。</li>
-<li><strong>外键约束</strong>：<br>InnoDB支持外键约束，这可以保证数据的引用完整性。外键可以用来强制执行数据库层面上的关系规则，确保一个表中的数据与另一个表中的数据相匹配。</li>
-<li><strong>自动灾难恢复</strong>：<br>InnoDB表空间包含了一个名为_doublewrite buffer_的组件，它可以在系统崩溃时防止数据损坏。InnoDB还支持在线备份，可以在不中断服务的情况下备份数据。</li>
-<li><strong>缓冲池</strong>：<br>InnoDB使用缓冲池来缓存数据和索引，这可以减少磁盘I&#x2F;O操作，提高性能。缓冲池中的数据页会被频繁访问，从而加快了数据库操作的速度。</li>
-<li><strong>自适应哈希索引</strong>：<br>InnoDB会自动创建哈希索引来加速查询操作，特别是当查询具有高度选择性时。哈希索引可以提高点查询的性能。</li>
-<li><strong>压缩和加密</strong>：<br>InnoDB支持数据压缩和透明数据加密（TDE），这可以帮助节省存储空间并提高安全性。</li>
-<li><strong>性能监控和调优</strong>：<br>InnoDB提供了详细的性能监控和调优选项，包括表和索引的统计信息、缓冲池命中率、锁等待情况等。</li>
-<li><strong>高可用性和扩展性</strong>：<br>InnoDB支持MySQL的高可用性解决方案，如MySQL Cluster、InnoDB Cluster和InnoDB ReplicaSet。它还支持分区，可以将大型表分成更小、更易于管理的部分。<br>由于这些特性，InnoDB成为了需要高性能、可靠性和高级功能的在线事务处理（OLTP）系统的首选存储引擎。自MySQL 5.5版本以来，InnoDB成为了MySQL的默认存储引擎。</li>
+<li><p><strong>事务支持</strong>：<br>InnoDB支持事务，这意味着可以确保一组数据库操作要么全部完成，要么全部不发生。事务具有ACID属性（原子性、一致性、隔离性和持久性），这些属性保证了数据的完整性和可靠性。</p>
+</li>
+<li><p><strong>MVCC</strong>：<br>InnoDB使用多版本并发控制来提高性能。在读取数据时，InnoDB可以提供数据的一致性视图，而不需要锁定正在被读取的数据。这减少了锁定并提高了多用户环境下的并发性能。</p>
+</li>
+<li><p><strong>行级锁定</strong>：<br>InnoDB支持行级锁定，这意味着在多用户环境中，当多个事务同时修改不同的行时，锁定可以更精细，从而减少锁定争用并提高性能。</p>
+</li>
+<li><p><strong>外键约束</strong>：<br>InnoDB支持外键约束，这可以保证数据的引用完整性。外键可以用来强制执行数据库层面上的关系规则，确保一个表中的数据与另一个表中的数据相匹配。</p>
+</li>
+<li><p><strong>自动灾难恢复</strong>：<br>InnoDB表空间包含了一个名为_doublewrite buffer_的组件，它可以在系统崩溃时防止数据损坏。InnoDB还支持在线备份，可以在不中断服务的情况下备份数据。</p>
+</li>
+<li><p><strong>缓冲池</strong>：<br>InnoDB使用缓冲池来缓存数据和索引，这可以减少磁盘I&#x2F;O操作，提高性能。缓冲池中的数据页会被频繁访问，从而加快了数据库操作的速度。</p>
+</li>
+<li><p><strong>自适应哈希索引</strong>：<br>InnoDB会自动创建哈希索引来加速查询操作，特别是当查询具有高度选择性时。哈希索引可以提高点查询的性能。</p>
+</li>
+<li><p><strong>压缩和加密</strong>：<br>InnoDB支持数据压缩和透明数据加密（TDE），这可以帮助节省存储空间并提高安全性。</p>
+</li>
+<li><p><strong>性能监控和调优</strong>：<br>InnoDB提供了详细的性能监控和调优选项，包括表和索引的统计信息、缓冲池命中率、锁等待情况等。</p>
+</li>
+<li><p><strong>高可用性和扩展性</strong>：<br>InnoDB支持MySQL的高可用性解决方案，如MySQL Cluster、InnoDB Cluster和InnoDB ReplicaSet。它还支持分区，可以将大型表分成更小、更易于管理的部分。<br>由于这些特性，InnoDB成为了需要高性能、可靠性和高级功能的在线事务处理（OLTP）系统的首选存储引擎。自MySQL 5.5版本以来，InnoDB成为了MySQL的默认存储引擎。</p>
+</li>
+<li><p><strong>存储结构</strong>：</p>
+<ul>
+<li>InnoDB 使用 <strong>B+ 树</strong>数据结构来组织数据，这种结构使得在大型数据集上的查询性能较好，并且支持高度并发的读写操作。</li>
+<li>每个表在磁盘上对应一个 <code>.ibd</code> 文件，该文件包含了数据和索引。</li>
+<li>表数据按主键顺序存储，这有助于提高范围查询的性能。</li>
+<li>InnoDB 还支持辅助索引（secondary index）和全文索引（full-text index）等功能。</li>
+</ul>
+</li>
+<li><p><strong>事务管理</strong>：</p>
+<ul>
+<li>InnoDB 支持原子性、一致性、隔离性和持久性（ACID）的事务特性，这对于数据完整性和并发控制非常重要。</li>
+<li>通过事务日志（redo log）和回滚日志（undo log），InnoDB 可以实现事务的崩溃恢复和回滚操作。</li>
+</ul>
+</li>
+<li><p><strong>并发控制</strong>：</p>
+<ul>
+<li>InnoDB 使用多版本并发控制（MVCC）来实现高并发性。MVCC 可以让读操作不被写操作所阻塞，从而提高了并发性能。</li>
+<li>行级锁定是 InnoDB 的默认锁定级别，允许多个事务同时修改同一张表的不同行。</li>
+</ul>
+</li>
+<li><p><strong>崩溃恢复</strong>：</p>
+<ul>
+<li>InnoDB 使用事务日志（redo log）和回滚日志（undo log）来实现崩溃恢复功能。在数据库崩溃时，可以通过日志重放来恢复数据到一致状态。</li>
+</ul>
+</li>
+<li><p><strong>性能调优</strong>：</p>
+<ul>
+<li>InnoDB 提供了许多参数和配置选项，可以根据具体的应用场景进行性能调优。例如，可以调整缓冲池大小、日志文件大小等参数以优化性能。</li>
+<li>可以通过监控 InnoDB 的系统状态变量和性能指标来进行性能分析和优化。</li>
+</ul>
+</li>
+<li><p><strong>备份和恢复</strong>：</p>
+<ul>
+<li>InnoDB 支持在线热备份，可以在数据库运行时进行备份，而不会中断用户的访问。</li>
+<li>可以使用物理备份工具（如 mysqldump、Percona XtraBackup 等）或逻辑备份工具（如 mysqldump）来备份和恢复 InnoDB 数据库。</li>
+</ul>
+</li>
 </ol>
 <h1 id="限流算法？"><a href="#限流算法？" class="headerlink" title="限流算法？"></a>限流算法？</h1><p>限流的意思就是限制发送端的流量发送，和接收端的流量接收。可以有效防止Dos攻击，和限制网络爬虫。<br>限流也称流量控制，指系统面临高并发，也就是大量请求后，限制新的请求对系统的访问，从而保证系统的稳定性。这样会导致一部分用户请求失败。</p>
 <h3 id="1-固定窗口限流算法"><a href="#1-固定窗口限流算法" class="headerlink" title="1.固定窗口限流算法"></a>1.固定窗口限流算法</h3><p>就是设定一个时间段，在时间段内限制访问量，如果超过设置的阈值，那么超出阈值的请求都直接拒绝，等到下一个时间段，重新开始计数。但这个固定窗口都bug，因为时间段都是自己设置的，那么假设有两个连续的时间段，0,1，那么如果[0.5,1,5]时间段内来了很多请求，那么在[0.5,1.5]这个时间段内可以接受的请求的上限就是阈值的2倍。</p>
@@ -1723,7 +1768,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Preparation For HSBC
+          HSBC
         
       </div>
     </a>
