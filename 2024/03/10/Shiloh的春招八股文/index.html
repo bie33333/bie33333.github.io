@@ -67,7 +67,7 @@
 <meta property="og:image" content="c:/images/db/redis/db-redis-sub-7.svg">
 <meta property="og:image" content="c:/images/db/redis/redis-performance-2.jpeg">
 <meta property="article:published_time" content="2024-03-10T09:21:42.000Z">
-<meta property="article:modified_time" content="2024-03-13T08:44:18.540Z">
+<meta property="article:modified_time" content="2024-03-14T08:45:47.436Z">
 <meta property="article:author" content="bie33333">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="八股">
@@ -854,10 +854,10 @@
 <h2 id="50-mysql是如何实现事务的？"><a href="#50-mysql是如何实现事务的？" class="headerlink" title="50.mysql是如何实现事务的？"></a>50.mysql是如何实现事务的？</h2><p>1.innodb在收到一个update请求后，会先找到数据所在页，并将数据写到buffer Pool中。<br>2.执行update，修改buffer Pool中的数据。<br>3.针对update语句生成一个redoLog日志对象。并载入LogBuffer中。<br>4.针对update语句生成undoLog日志，用于事务回滚。<br>5.如果事务提交，就会把redoLog日志持久化，然后选择合适的时机将Buffer Pool中修改的数据持久化到磁盘。<br>6.如果事务回滚，则利用undoLog进行回滚。</p>
 <h3 id="50-1-为什么要记录redoLog？"><a href="#50-1-为什么要记录redoLog？" class="headerlink" title="50.1 为什么要记录redoLog？"></a>50.1 为什么要记录redoLog？</h3><p>理论上说事务提交时，直接将数据持久化到磁盘就好了。但是磁盘随机IO效率实在低，因此引入Buffer_Pool，先在BufferPool修改，然后在h合适的实际刷到磁盘。但如果刷盘的过程中宕机了。就会无法满足持久性了。因此引入redoLog。通过事务对数据变更的时候，除了修改buffer_pool的数据，也会将此条修改追加到redoLog，当提交事务的时候，直接将redoLog刷到磁盘上进行持久化，如果宕机了，就重新刷一下。</p>
 <h2 id="51-执行一条select语句，期间发生了什么？"><a href="#51-执行一条select语句，期间发生了什么？" class="headerlink" title="51.执行一条select语句，期间发生了什么？"></a>51.执行一条select语句，期间发生了什么？</h2><p>mysql分为server层和执行引擎层。<br>server层包括：连接器、查询缓存、分析器、优化器、执行器。<br>1.连接器：管理连接、权限验证。<br>2.分析器：词法分析、语法分析。<br>3.优化器：执行计划生成、索引选择。<br>4.执行器：操作引擎、返回结果。<br>存储引擎层：就是存储引擎，提供数据读写接口，架构是插件式的，支持多个存储引擎，建表时可以通过engine来指定存储引擎，不同的存储引擎，共用一个Server层。<br>1.应用程序把查询SQL语句发给服务器端执行。<br>2.查询缓存。<br>3.查询优化处理，生成执行计划，包括解析SQL、预处理、优化SQL执行计划。<br>4.mysql会根据相应的执行计划完成整个查询。<br>5.将查询结果返回给客户端。</p>
-<h1 id="数据库事务？ACID？"><a href="#数据库事务？ACID？" class="headerlink" title="数据库事务？ACID？"></a>数据库事务？ACID？</h1><p>数据库事务是指作为单个逻辑工作单元执行的一系列操作，这些操作要么全部成功完成，要么全部失败回滚，以确保数据的一致性和完整性。事务具有四个特性，即ACID：</p>
-<p><strong>原子性</strong>（Atomicity）：事务是一个不可分割的工作单位，要么全部执行成功，要么全部失败回滚。如果事务中的任何一步操作失败，整个事务将被回滚到最初状态，保持数据的一致性。</p>
-<p><strong>一致性</strong>（Consistency）：事务在执行前后，数据库从一个一致性状态转换到另一个一致性状态。这意味着事务必须遵守数据库的完整性约束，以确保数据的有效性和正确性。</p>
-<p><strong>隔离性</strong>（Isolation）：多个事务并发执行时，每个事务都应该被隔离开来，互不干扰。这可以防止并发执行时出现数据不一致或丢失的情况。</p>
+<h1 id="数据库事务？ACID？"><a href="#数据库事务？ACID？" class="headerlink" title="数据库事务？ACID？"></a>数据库事务？ACID？</h1><p><strong>数据库事务是指作为单个逻辑工作单元执行的一系列操作</strong>，这些操作要么全部成功完成，要么全部失败回滚，以确保数据的一致性和完整性。事务具有四个特性，即<strong>ACID</strong>：</p>
+<p><strong>原子性</strong>（Atomicity）：事务是一个<strong>不可分割</strong>的工作单位，<strong>要么全部执行成功，要么全部失败回滚</strong>。如果事务中的任何一步操作失败，整个事务将被回滚到最初状态，保持数据的一致性。</p>
+<p><strong>一致性</strong>（Consistency）：事务在执行前后，数据库<strong>从一个一致性状态转换到另一个一致性状态。</strong>这意味着事务必须遵守数据库的完整性约束，以确保数据的有效性和正确性。</p>
+<p><strong>隔离性</strong>（Isolation）：多个事务并发执行时，<strong>每个事务都应该被隔离开来</strong>，互不干扰。这可以防止并发执行时出现数据不一致或丢失的情况。</p>
 <p><strong>持久性</strong>（Durability）：一旦事务提交，其结果应该是永久性的，即使系统发生故障也不会丢失。数据库系统需要确保已提交的事务对系统的影响是持久的。</p>
 <h2 id="事务并发会引起脏读、不可重复读、幻读问题"><a href="#事务并发会引起脏读、不可重复读、幻读问题" class="headerlink" title="事务并发会引起脏读、不可重复读、幻读问题"></a>事务并发会引起<strong>脏读、不可重复读、幻读</strong>问题</h2><p> <code>脏读:</code>如果一个事务读取到了另一个未提交事务修改过的数据，我们就称发生了脏读现象。</p>
 <p><code>不可重复读</code>:同一个事务内，前后多次读取，读取到的数据内容不一致</p>
@@ -945,7 +945,8 @@
 <h3 id="2-滑动窗口限流算法"><a href="#2-滑动窗口限流算法" class="headerlink" title="2.滑动窗口限流算法"></a>2.滑动窗口限流算法</h3><p>也是设置一个1秒以内的请求阈值，只不过那1秒均分成了很多小段，每个小段独立计数，并且每新增一个小段，那么窗口就会向右滑动一个小段，这样就可以避免固定窗口临界点周围发生的超出请求阈值的情况。例如：[0,1]滑到[0.2,1.2]。滑动窗口会把超出的请求直接暴力拒绝掉</p>
 <h3 id="3-漏桶算法"><a href="#3-漏桶算法" class="headerlink" title="3.漏桶算法"></a>3.漏桶算法</h3><p>就是有个漏斗一样的东西，请求可以以任意速率进入桶中。但是桶只会以恒定速率处理请求，如果请求流入桶的速率过快，导致桶满，那么溢出的请求就会直接背丢弃。<br>这个漏桶算法无论是平滑流量还是突发流量都是循规蹈矩按照一定的速率处理请求，那么很显然并不适合突发流量。</p>
 <h3 id="4-令牌桶算法"><a href="#4-令牌桶算法" class="headerlink" title="4.令牌桶算法"></a>4.令牌桶算法</h3><p>这个跟漏桶算法刚好反过来，这个是有一个令牌管理员，按照一定的速率往桶里放令牌，当请求来的时候就往桶里拿令牌，一个请求需要消耗一个令牌，拿到令牌的请求才可以被处理，拿不到令牌就直接拒绝这个请求。当令牌桶满了的时候，那么溢出的令牌就会被丢弃。<br>RateLimiter就是实现的令牌桶算法。</p>
-<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h4 id="什么是Redis，为什么用Redis？"><a href="#什么是Redis，为什么用Redis？" class="headerlink" title="# 什么是Redis，为什么用Redis？"></a><a href="#%E4%BB%80%E4%B9%88%E6%98%AFredis-%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8redis">#</a> 什么是Redis，为什么用Redis？</h4><p>Redis是一种支持key-value等多种数据结构的存储系统。可用于缓存，事件发布或订阅，高速队列等场景。支持网络，提供字符串，哈希，列表，队列，集合结构直接存取，基于内存，可持久化。</p>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h4 id="什么是Redis，为什么用Redis？"><a href="#什么是Redis，为什么用Redis？" class="headerlink" title="# 什么是Redis，为什么用Redis？"></a><a href="#%E4%BB%80%E4%B9%88%E6%98%AFredis-%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8redis">#</a> 什么是Redis，为什么用Redis？</h4><p>Redis是一种支持key-value等多种数据结构的存储系统。可用于缓存，事件发布或订阅，高速队列等场景。</p>
+<p>支持网络，提供字符串，哈希，列表，队列，集合结构直接存取，基于内存，可持久化。</p>
 <ul>
 <li>读写性能优异<ul>
 <li>Redis能读的速度是110000次&#x2F;s,写的速度是81000次&#x2F;s （测试条件见下一节）。</li>

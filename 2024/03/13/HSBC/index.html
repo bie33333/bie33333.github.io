@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>HSBC | 的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="并发：并发（Concurrent），在 操作系统 中，是指一个时间段中有几个程序都处于已启动运行到运行完毕之间，且这几个程序都是在同一个处理机上运行。 并行：并行（Parallel），当系统有一个以上CPU时，当一个CPU执行一个进程时，另一个CPU可以执行另一个进程，两个进程互不抢占CPU资源，可以同时进行，这种方式我们称之为并行 (Parallel)。 Concurrent: Concurre">
+  <meta name="description" content="并发：并发（Concurrent），在 操作系统 中，是指一个时间段中有几个程序都处于已启动运行到运行完毕之间，且这几个程序都是在同一个处理机上运行。  并行：并行（Parallel），当系统有一个以上CPU时，当一个CPU执行一个进程时，另一个CPU可以执行另一个进程，两个进程互不抢占CPU资源，可以同时进行，这种方式我们称之为并行 (Parallel)。 Concurrent: in the">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HSBC">
 <meta property="og:url" content="http://example.com/2024/03/13/HSBC/index.html">
 <meta property="og:site_name" content="的个人博客">
-<meta property="og:description" content="并发：并发（Concurrent），在 操作系统 中，是指一个时间段中有几个程序都处于已启动运行到运行完毕之间，且这几个程序都是在同一个处理机上运行。 并行：并行（Parallel），当系统有一个以上CPU时，当一个CPU执行一个进程时，另一个CPU可以执行另一个进程，两个进程互不抢占CPU资源，可以同时进行，这种方式我们称之为并行 (Parallel)。 Concurrent: Concurre">
+<meta property="og:description" content="并发：并发（Concurrent），在 操作系统 中，是指一个时间段中有几个程序都处于已启动运行到运行完毕之间，且这几个程序都是在同一个处理机上运行。  并行：并行（Parallel），当系统有一个以上CPU时，当一个CPU执行一个进程时，另一个CPU可以执行另一个进程，两个进程互不抢占CPU资源，可以同时进行，这种方式我们称之为并行 (Parallel)。 Concurrent: in the">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-12T16:02:42.000Z">
-<meta property="article:modified_time" content="2024-03-14T07:51:23.728Z">
+<meta property="article:modified_time" content="2024-03-14T08:53:32.042Z">
 <meta property="article:author" content="bie33333">
 <meta property="article:tag" content="面经">
 <meta name="twitter:card" content="summary">
@@ -175,26 +175,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>并发：并发（Concurrent），在 操作系统 中，是指一个时间段中有几个程序都处于已启动运行到运行完毕之间，且这几个程序都是在同一个处理机上运行。 并行：并行（Parallel），当系统有一个以上CPU时，当一个CPU执行一个进程时，另一个CPU可以执行另一个进程，两个进程互不抢占CPU资源，可以同时进行，这种方式我们称之为并行 (Parallel)。</p>
-<p>Concurrent: Concurrent (Concurrent), in the operating system, refers to a period of time in which several programs are in the process of starting and running to the end of the run, and these programs are running on the same processor. Parallel: Parallel (Parallel), when the system has more than one CPU, when a CPU executes a process, another CPU can execute another process, the two processes do not seize each other’s CPU resources, can be carried out at the same time, this way we call parallel (Parallel)</p>
+        <p>并发：并发（Concurrent），在 操作系统 中，是指一个时间段中有几个程序都处于已启动运行到运行完毕之间，且这几个程序都是在同一个处理机上运行。</p>
+<p> 并行：并行（Parallel），当系统有一个以上CPU时，当一个CPU执行一个进程时，另一个CPU可以执行另一个进程，两个进程互不抢占CPU资源，可以同时进行，这种方式我们称之为并行 (Parallel)。</p>
+<p><strong>Concurrent</strong>: in the operating system, refers to a period of time in which several programs are in the process of starting and running to the end of the run, and these programs are running on the same processor.</p>
+<p><strong>Parallel</strong> (Parallel), when the system has more than one CPU, when a CPU executes a process, another CPU can execute another process, the two processes do not seize each other’s CPU resources, can be carried out at the same time, this way we call parallel (Parallel)</p>
 <p>\1. 多线程中synchronize关键字的认识 </p>
-<p>synchronize关键字是Java中用于实现同步的关键字，它可以保证多个线程在访问共享资源时，同一时刻只有一个线程能够访问。synchronize关键字可以修饰方法或者作为代码块的一部分。当一个线程访问一个使用synchronize修饰的方法或代码块时，它会获取到一个锁，其他线程需要等待这个锁被释放后才能继续访问。这样可以避免多线程环境下的数据损坏和数据不一致问题。</p>
+<p>synchronize关键字是Java中用于实现同步的关键字，它可以保证多个线程在访问共享资源时，同一时刻只有一个线程能够访问。synchronize关键字可以修饰<strong>方法</strong>或者作为<strong>代码块</strong>的一部分。当一个线程访问一个使用synchronize修饰的方法或代码块时，它会获取到一个<strong>锁</strong>，其他线程需要等待这个锁被释放后才能继续访问。这样可以避免多线程环境下的<strong>数据损坏</strong>和<strong>数据不一致</strong>问题。</p>
 <p>\1.The synchronize keyword is a keyword used to achieve synchronization in Java. It can ensure that when multiple threads access shared resources, only one thread can access them at the same time. The synchronize keyword can modify a <strong>method</strong> or be part of a <strong>code block</strong>. When a thread accesses a method or code block modified with synchronize, it will acquire a lock, and other threads need to wait for the lock to be released before they can continue to access it. This can avoid data corruption and inconsistency problems in multi-threaded environments.</p>
-<p> \2. final关键字 final关键字在Java中有以下几个用途： - 修饰类：表示该类<strong>不能被继承</strong>； - 修饰方法：表示该方法<strong>不能被子类重写</strong>； - 修饰变量：表示该变量的值<strong>只能被赋值一次，即常量</strong>。 </p>
+<p> \2. final关键字 final关键字在Java中有以下几个用途：</p>
+<p>​	修饰类：表示该类<strong>不能被继承</strong>；<br>​	修饰方法：表示该方法<strong>不能被子类重写</strong><br>​	修饰变量：表示该变量的值<strong>只能被赋值一次，即常量</strong>。 </p>
 <p>The final keyword has the following uses in Java:</p>
 <ul>
 <li>Modified class: indicates that the class ** cannot be <strong>inherited</strong> <strong>;</strong></li>
 </ul>
 <p>** - Modified method: indicates that the method ** cannot be <strong>overridden by subclasses</strong> **;</p>
-<ul>
-<li>Modified variables : Indicates that the value of this variable can only be <strong>assigned once</strong>, that is, a const.</li>
-</ul>
+<p>Modified variables : Indicates that the value of this variable can only be <strong>assigned once</strong>, that is, a const.</p>
 <p>\3. spring cloud怎么做的微服务拆分，以及怎么做的分流 	</p>
 <p>Spring Cloud是一个基于Spring Boot的微服务框架，它提供了一系列的工具和组件来帮助我们快速构建分布式系统。在Spring Cloud中，可以通过以下方式进行微服务的拆分和分流：<br>微服务拆分：通过将不同的业务模块<strong>拆分成独立的子项目</strong>，每个子项目都有自己的数据库和业务逻辑。这样可以降低系统的复杂度，提高开发效率和可维护性。<br>分流：在Spring Cloud中，可以使用<strong>Ribbon、Feign</strong>等组件来实现<strong>负载均衡和分流</strong>。这些组件可以帮助我们将请求分发到不同的服务实例上，从而提高系统的可用性和性能。例如，Ribbon可以根据预设的规则（如轮询、随机等）将请求分发到不同的服务实例上，而Feign则可以通过声明式的HTTP客户端来实现负载均衡。</p>
 <ol>
 <li><p>你在项目中遇到了什么问题，你是怎么解决的？ 这个问题的回答取决于你个人的经历。你可以选择一个你曾经在项目中遇到的问题，描述问题的背景、影响以及你采取的措施来解决这个问题。例如，如果你遇到了性能瓶颈，你可以讲述你是如何通过分析性能指标、优化代码和调整系统配置来提高性能的。</p>
 </li>
-<li><p>你是否了解NIO？ 是的，我了解NIO（New Input&#x2F;Output）。NIO是Java中的一种输入&#x2F;输出处理方式，它提供了与传统I&#x2F;O不同的方法。NIO主要有以下几个特点： - 非阻塞I&#x2F;O：可以同时处理多个连接，而不需要为每个连接分配一个线程。 - 缓冲区（Buffer）：用于存储和传输数据。 - 通道（Channel）：表示打开到实体（如文件或套接字）的连接。 </p>
+<li><p>你是否了解NIO？ 是的，我了解NIO（New Input&#x2F;Output）。NIO是Java中的一种输入&#x2F;输出处理方式，它提供了与传统I&#x2F;O不同的方法。NIO主要有以下几个特点： </p>
+<ul>
+<li>非阻塞I&#x2F;O：可以同时处理多个连接，而不需要为每个连接分配一个线程。</li>
+<li>缓冲区（Buffer）：用于存储和传输数据。</li>
+<li><ul>
+<li>通道（Channel）：表示打开到实体（如文件或套接字）的连接。</li>
+</ul>
+</li>
+</ul>
 </li>
 <li><p>你是否了解spring cloud？ 是的，我了解Spring Cloud。Spring Cloud是一个基于Spring Boot的微服务框架，它提供了许多工具和库，用于简化分布式系统的开发。Spring Cloud包括服务发现、配置管理、负载均衡、断路器、网关等多种组件，使得构建微服务架构变得更加容易。 </p>
 </li>
@@ -219,19 +228,20 @@
 <p>1.用英语做简单的自我介绍，主要考察口语能力以及灵活应变能力； 2.why HSBC？</p>
 <p>3你觉得自己最大的优点是什么？ 4.你认为离达到teamleader还有哪些需要努力的地方？ 5.介绍一下你认为最有挑战的一个项目</p>
 <ol>
-<li><p>​	Hello, my name is KMQ, and I am excited to have the opportunity to interview with you today. I will recently graduate from Xidian University with a degree in SoftwareEnginerring. During my studies, I also participated in internships and projects that allowed me to develop practical skills in  Java basis and basic software development. I am passionate about software development and always eager to learn new technologies and improve my skills. </p>
+<li><p>​	Hello, my name is KMQ, and I am excited to have the opportunity to interview with you today. I will recently graduate from Xidian University with a degree in SoftwareEnginerring. During my studies, I also participated in internships and projects that allowed me to develop practical skills in  Java basis and basic software development. I am passionate about software Engineering and always eager to learn new technologies and improve my skills.<br>I would very grateful if I can be offered a position in HSBC. Thank you for considering my candidacy.”</p>
 </li>
-<li><p>I want to work at HSBC because I admire its reputation and global influence. As an internationally renowned bank, HSBC has a wide business network and extensive experience in providing diverse financial services worldwide. I believe working in such a diverse and inclusive environment will provide me valuable learning and growth opportunities. </p>
+<li><p>I want to work at HSBC because I admire its reputation and global influence. As an internationally renowned bank, HSBC has a wide business network and aboundant experience in providing diverse financial services worldwide. I believe working in such a diverse and inclusive environment will provide me valuable learning and growth opportunities. </p>
 <p>Also, I appreciate HSBC’s commitment to sustainable development and social responsibility. I hope to be part of a team that positively impacts society and contributes to achieving its mission and goals.</p>
 </li>
 <li><p>My greatest strength is my ability to quickly learn and adapt to new technologies and environments. I am highly curious and enjoy taking part in new subjects, which has helped me practice my skills in software development. Additionally, I am a team player and enjoy collaborating with others to solve complex problems. </p>
 </li>
 <li><p>To become a successful team leader, I believe I need to work on several areas. Firstly, I should continue to enhance my technical skills and stay updated with the latest industry trends to lead the team by example. Secondly, I need to develop better communication and interpersonal skills to effectively manage the team and resolve conflicts. Lastly, I must work on my leadership abilities, such as decision-making, problem-solving, and project management, to ensure that the team is motivated, organized, and productive.</p>
 </li>
-<li><p>One of the toughest projects I’ve worked on was building a logistics management system in my intership. It involved creating features like user login, item tracking, and order management. We used Spring Boot as our main tool.</p>
-<p>The challenge was making sure everything worked smoothly, especially when lots of people were using the system at once. We had to figure out ways to keep it fast and reliable. For example, we added a security feature using Redis for user authentication.”use expire key word to “</p>
+<li><p>One of the toughest projects I’ve worked on was building a logistics management system in my intership. It involved creating features like user login, item tracking, and order management. We used Spring Boot and JAVA as our main tool and main language.</p>
+<p>The challenge was making sure everything worked smoothly, especially when lots of people were using the system at once. We had to figure out ways to keep it fast and reliable.</p>
+<p> For example, we added a security feature using Redis for user Verifying.(We use Redis to store and verify the captcha)(“in detail, use expire key word to achieve this goal” setex)</p>
 <p>To handle payments, we set up a system with RabbitMQ to notify users when transactions were successful. We also made sure the system could handle more work by using Docker to scale up when needed.</p>
-<p>Overall, this project taught me a lot about problem-solving and teamwork. We had to be creative and work together to overcome obstacles and deliver a great product.</p>
+<p>Overall, this project taught me a lot about problem-solving, project manegrment and teamwork. We had to be creative and work together to overcome obstacles and deliver a great product.</p>
 </li>
 </ol>
 <p>\1. 介绍个人信息 在介绍个人信息时，你可以简要地说明你的姓名、年龄、教育背景（比如你在哪所大学学习了什么专业），以及任何相关的工作经验或技能。例如： “大家好，我叫[你的名字]，今年[你的年龄]岁，毕业于[你的大学名称]，专业是[你的专业]。在校期间，我专注于软件开发和编程技能的学习，并且通过参与多个项目和实习机会，积累了实际的工作经验。” 2. 介绍在校表现 在这一部分，你可以谈谈你在学校的成绩、所获奖项、参与的项目或社团活动等。例如： “在大学期间，我的成绩一直保持在优秀水平，曾获得[具体奖项或荣誉]。除了学术表现，我还积极参与了[具体项目或社团名称]，在其中担任[你的角色]，这些经历帮助我提升了团队合作和项目管理的能力。” 3. 为什么选择汇丰，对汇丰的文化有什么了解？ 在回答这个问题时，你可以提到汇丰银行的全球声誉、职业发展机会、以及对员工的重视等方面。同时，你可以提及汇丰的文化，比如它的核心价值观和对客户服务的承诺。例如： “我选择汇丰是因为它是全球领先的金融机构之一，以其卓越的服务和创新精神而闻名。我对汇丰的文化有一定的了解，特别是它强调的’客户至上’和’诚信合规’的价值观，这与我个人的职业理念非常契合。我相信在汇丰工作不仅能够提供广阔的职业发展空间，还能让我在一个注重道德和责任感的环境中成长。” 4. Java测试题 这个问题可能会包括一些技术问题，用来测试你的Java编程能力。由于你没有提供具体的题目，我无法给出确切的答案。但是，你可以准备一些常见的Java面试题目，如面向对象的概念、Java集合框架、异常处理、多线程等。 5. 毕业设计内容 在这个问题上，你需要简要描述你的毕业设计项目，包括项目的目标、你的角色、所使用的技术和工具，以及项目的成果。例如： “我的毕业设计项目是关于[项目的主题]，目标是[项目的目标]。在这个项目中，我主要负责[你的角色和职责]，使用了[技术和工具]来实现[具体的功能或成果]。通过这个项目，我不仅提高了我的编程技能，还学会了如何在实际环境中解决问题。”</p>
@@ -250,8 +260,19 @@
 <li>上一个工作的工作内容、项目技术以及离职原因：我在上一家公司主要从事后端开发工作，参与了多个项目的开发，涉及的技术有Java、Spring Boot、MySQL等。离职原因是寻求更高的发展机会。 </li>
 <li>数据结构算法代码：请根据具体问题编写相应的代码。</li>
 </ol>
+<h1 id="什么是Redis？你是如何在你的项目中用Redis实现用户登录页面的验证码功能的？"><a href="#什么是Redis？你是如何在你的项目中用Redis实现用户登录页面的验证码功能的？" class="headerlink" title="什么是Redis？你是如何在你的项目中用Redis实现用户登录页面的验证码功能的？"></a>什么是Redis？你是如何在你的项目中用Redis实现用户登录页面的验证码功能的？</h1><h2 id="关于-Redis："><a href="#关于-Redis：" class="headerlink" title="关于 Redis："></a><strong>关于 Redis：</strong></h2><p>Redis 是一个开源的内存数据库，也可以用作<strong>缓存</strong>、<strong>消息代理</strong>和<strong>排行榜</strong>等用途。它支持多种数据结构，包括<strong>字符串、哈希、列表、集合、有序集合</strong>等，提供了丰富的命令和功能，如<strong>持久化、复制、事务</strong>等。Redis 的主要特点包括快速、高效、持久化、数据类型丰富等，使其成为构建高性能应用和解决特定问题的理想选择。</p>
+<p><strong>关于在项目中使用 Redis 实现用户登录页面的验证码功能：</strong></p>
+<p>在我的项目中，我使用 Redis 来实现用户登录页面的验证码功能。具体步骤如下：</p>
+<ol>
+<li><strong>生成验证码：</strong> 当用户请求登录页面时，服务器会生成一个随机的验证码，并将验证码保存到 Redis 中。我会设置一个有效期来限制验证码的有效时间，通常为几分钟。</li>
+<li><strong>将验证码发送给用户：</strong> 服务器将生成的验证码发送给用户，通常是通过短信、邮件或者直接在页面上显示。</li>
+<li><strong>用户输入验证码：</strong> 用户在登录页面中输入收到的验证码。</li>
+<li><strong>验证验证码：</strong> 用户提交表单后，服务器会从 Redis 中获取相应的验证码，并与用户输入的验证码进行比较。如果验证码匹配且未过期，则用户验证成功，允许登录；否则，验证失败，提示用户重新输入验证码。</li>
+<li><strong>清除验证码：</strong> 如果用户验证成功或验证码过期，服务器会从 Redis 中删除该验证码，以确保验证码只能使用一次或在有效期内。</li>
+</ol>
+<p>通过使用 Redis 实现验证码功能，我能够确保验证码的快速生成和验证，并且能够有效地防止恶意登录和攻击。Redis 的高性能和持久化特性使其成为实现此类功能的理想选择。</p>
 <h1 id="rabbitMQ"><a href="#rabbitMQ" class="headerlink" title="rabbitMQ"></a>rabbitMQ</h1><p><strong>关于 RabbitMQ：</strong></p>
-<p>RabbitMQ 是一个开源的Erlang语言编写的<strong>消息代理软件</strong>，它实现了高级消息队列协议（AMQP），用于在应用程序之间传递消息。</p>
+<p>RabbitMQ 是一个开源的Erlang语言编写的<strong>消息代理软件</strong>，它实现了<strong>高级消息队列协议</strong>（AMQP），用于在应用程序之间传递消息。实现系统间的<strong>解耦</strong>和<strong>异步</strong>通信（同步和异步的区别：<strong>同步</strong>：发出一个调用之后，在没有得到结果之前， 该调用就不可以返回，一直等待。<strong>异步</strong>：调用在发出之后，不用等待返回结果，该调用直接返回。）</p>
 <p><strong>“消息队列(Message Queue)”是在消息的传输过程中保存消息的容器</strong></p>
 <p>RabbitMQ是一个轻量级、可靠、灵活、易于部署和扩展的消息队列系统。RabbitMQ 提供了强大的消息传递机制，可以在不同应用之间进行通信，并且能够处理高并发的情况。</p>
 <p>RabbitMQ 的核心概念包括：</p>
@@ -274,21 +295,21 @@
 <li><strong>关闭连接和通道：</strong> 在程序结束时，需要关闭与 RabbitMQ 的连接和通道。</li>
 </ol>
 <h1 id="JAVA-IO和NIO的区别"><a href="#JAVA-IO和NIO的区别" class="headerlink" title="JAVA IO和NIO的区别"></a>JAVA IO和NIO的区别</h1><p>Java I&#x2F;O（Input&#x2F;Output，输入&#x2F;输出）和 Java NIO（New I&#x2F;O，新 I&#x2F;O）都是 Java 中用于处理数据的机制，但它们之间有一些重要的区别：</p>
-<h2 id="Java-I-O（java-io）："><a href="#Java-I-O（java-io）：" class="headerlink" title="Java I&#x2F;O（java.io）："></a><strong>Java I&#x2F;O（java.io）：</strong></h2><p>Java I&#x2F;O 是 Java 中最早的 I&#x2F;O 处理机制，它基于流（Stream）的概念。Java I&#x2F;O 是阻塞的，意味着当执行 I&#x2F;O 操作时，线程会一直等待直到操作完成。</p>
+<h2 id="Java-I-O（java-io）："><a href="#Java-I-O（java-io）：" class="headerlink" title="Java I&#x2F;O（java.io）："></a><strong>Java I&#x2F;O（java.io）：</strong></h2><p>Java I&#x2F;O 是 Java 中最早的 I&#x2F;O 处理机制，它基于<strong>流（Stream）</strong>的概念。Java I&#x2F;O 是阻塞的，意味着当执行 I&#x2F;O 操作时，线程会<strong>一直等待直到操作完成</strong>。</p>
 <p>Java I&#x2F;O 主要包括以下几个核心类：</p>
 <ul>
-<li><strong>InputStream</strong> 和 OutputStream：用于读取和写入字节数据。</li>
-<li><strong>Reader</strong> 和 Writer：用于读取和写入字符数据。</li>
-<li><strong>FileInputStream</strong>、FileOutputStream、FileReader、FileWriter 等类：用于操作文件。</li>
-<li><strong>Socket</strong>、ServerSocket 等类：用于网络编程。</li>
+<li><strong>InputStream</strong> 和 OutputStream：用于<strong>读取和写入字节数据</strong>。</li>
+<li><strong>Reader</strong> 和 Writer：用于<strong>读取和写入字符数据</strong>。</li>
+<li><strong>FileInputStream</strong>、FileOutputStream、FileReader、FileWriter 等类：用于<strong>操作文件</strong>。</li>
+<li><strong>Socket</strong>、ServerSocket 等类：用于<strong>网络编程</strong>。</li>
 </ul>
-<p>Java I&#x2F;O 的缺点是性能可能不够高效，尤其是在需要处理大量并发连接的情况下，因为它是阻塞式的，每个连接都需要一个单独的线程。</p>
-<h2 id="Java-NIO（java-nio）："><a href="#Java-NIO（java-nio）：" class="headerlink" title="Java NIO（java.nio）："></a><strong>Java NIO（java.nio）：</strong></h2><p>Java NIO 是在 JDK 1.4 中引入的新的 I&#x2F;O 处理机制。NIO 提供了非阻塞的 I&#x2F;O 操作，它通过通道（Channel）和缓冲区（Buffer）来处理数据。这使得一个线程可以同时处理多个连接，从而提高了系统的效率。</p>
+<p>Java I&#x2F;O 的缺点是<strong>性能不够高效</strong>，尤其是在需要处理大量<strong>并发连接</strong>的情况下，因为它是<strong>阻塞</strong>式的，每个连接都需要<strong>一个单独的线程</strong>。</p>
+<h2 id="Java-NIO（java-nio）："><a href="#Java-NIO（java-nio）：" class="headerlink" title="Java NIO（java.nio）："></a><strong>Java NIO（java.nio）：</strong></h2><p>Java NIO 是在 JDK <strong>1.4</strong> 中引入的新的 I&#x2F;O 处理机制。NIO 提供了<strong>非阻塞的 I&#x2F;O 操作</strong>，它通过<strong>通道（Channel）和缓冲区（Buffer）来处理数据</strong>。这使得<strong>一个线程可以同时处理多个连接</strong>，从而提高了系统的效率。</p>
 <p>Java NIO 主要包括以下几个核心类和接口：</p>
 <ul>
-<li><strong>Channel</strong>：用于读取和写入数据的抽象类，包括 FileChannel、SocketChannel、ServerSocketChannel、DatagramChannel 等。</li>
-<li><strong>Buffer</strong>：用于存储数据的缓冲区，包括 ByteBuffer、CharBuffer、IntBuffer 等。</li>
-<li><strong>Selector</strong>：用于多路复用的选择器，可以监听多个通道上的事件，只有在有事件发生时才会唤醒线程。</li>
+<li><strong>Channel</strong>：用于<strong>读取</strong>和<strong>写入</strong>数据的抽象类，包括 FileChannel、SocketChannel、ServerSocketChannel、DatagramChannel 等。</li>
+<li><strong>Buffer</strong>：用于<strong>存储数据</strong>的<strong>缓冲区</strong>，包括 ByteBuffer、CharBuffer、IntBuffer 等。</li>
+<li><strong>Selector</strong>：用于<strong>多路复用的选择器</strong>，可以监听多个通道上的事件，只有在有事件发生时才会唤醒线程。</li>
 </ul>
 <p>Java NIO 虽然相比 Java I&#x2F;O 更为高效和灵活，但也更为复杂，需要更多的代码来实现相同的功能。因此，在选择 Java I&#x2F;O 还是 Java NIO 时，需要根据具体的需求和场景来决定。通常来说，对于简单的 I&#x2F;O 操作，可以使用 Java I&#x2F;O；而对于需要处理大量并发连接或需要更高性能的情况，则可以考虑使用 Java NIO。</p>
 <h1 id="MYSQL建表需要注意什么"><a href="#MYSQL建表需要注意什么" class="headerlink" title="MYSQL建表需要注意什么"></a>MYSQL建表需要注意什么</h1><ol>
@@ -328,23 +349,23 @@
 <li><strong>生产就绪：</strong> Spring Boot 提供了丰富的监控、度量、健康检查等功能，以帮助开发者更好地管理和监控应用程序。</li>
 </ol>
 <p>总的来说，Spring 提供了强大的基础设施和灵活的配置方式，而 Spring Boot 则进一步简化了 Spring 应用的开发和部署过程，使得开发者可以更加专注于业务逻辑的实现。</p>
-<h1 id="数据库事务"><a href="#数据库事务" class="headerlink" title="数据库事务"></a>数据库事务</h1><p><strong>数据库事务是指作为单个逻辑工作单元执行的一系列操作</strong>，这些操作要么全部成功完成，要么全部失败回滚，以确保数据的一致性和完整性。事务具有四个特性，即<strong>ACID</strong>：</p>
+<h1 id="数据库事务"><a href="#数据库事务" class="headerlink" title="数据库事务"></a>数据库事务</h1><p>数据库事务是指 <strong>作为单个逻辑工作单元</strong> <strong>执行的</strong> <strong>一系列操作</strong>，这些操作要么全部成功完成，要么全部失败回滚，以确保数据的一致性和完整性。事务具有四个特性，即<strong>ACID</strong>：</p>
 <p><strong>原子性</strong>（Atomicity）：事务是一个<strong>不可分割</strong>的工作单位，<strong>要么全部执行成功，要么全部失败回滚</strong>。如果事务中的任何一步操作失败，整个事务将被回滚到最初状态，保持数据的一致性。</p>
-<p><strong>一致性</strong>（Consistency）：事务在执行前后，数据库<strong>从一个一致性状态转换到另一个一致性状态。</strong>这意味着事务必须遵守数据库的完整性约束，以确保数据的有效性和正确性。</p>
-<p><strong>隔离性</strong>（Isolation）：多个事务并发执行时，<strong>每个事务都应该被隔离开来</strong>，互不干扰。这可以防止并发执行时出现数据不一致或丢失的情况。</p>
-<p><strong>持久性</strong>（Durability）：一旦事务提交，其结果应该是永久性的，即使系统发生故障也不会丢失。数据库系统需要确保已提交的事务对系统的影响是持久的。</p>
-<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>索引（Index）是数据库中一种用于提高查询效率的数据结构，它可以帮助数据库系统快速定位和访问数据。索引类似于书籍的目录，通过提供关键字和对应页码的映射，可以快速找到特定信息。</p>
+<p><strong>一致性</strong>（Consistency）：事务在<strong>执行前后</strong>，数据库<strong>从一个一致性状态转换到另一个一致性状态。</strong>这意味着事务必须遵守数据库的完整性约束，以确保数据的有效性和正确性。</p>
+<p><strong>隔离性</strong>（Isolation）：多个事务<strong>并发执行时</strong>，<strong>每个事务都应该被隔离开来</strong>，互不干扰。这可以防止并发执行时出现数据不一致或丢失的情况。</p>
+<p><strong>持久性</strong>（Durability）：一旦事务提交，其<strong>结果应该是永久性的</strong>，即<strong>使系统发生故障也不会丢失</strong>。数据库系统需要确保已提交的事务对系统的影响是持久的。</p>
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>索引（Index）是数据库中一种<strong>用于提高查询效率的数据结构</strong>，它可以帮助数据库系统<strong>快速定位和访问数据</strong>。索引类似于书籍的目录，通过提供关键字和对应页码的映射，可以快速找到特定信息。</p>
 <p>在 MySQL 中，索引是用于加速数据检索的重要组件。MySQL 支持多种类型的索引，包括普通索引、唯一索引、主键索引、全文索引等。常见的索引类型包括：</p>
 <ol>
 <li><strong>普通索引：</strong> 最基本的索引类型，没有任何限制，可以在列上创建普通索引。</li>
 <li><strong>唯一索引：</strong> 确保索引列中的值是唯一的，用于保证数据的完整性。</li>
-<li><strong>主键索引：</strong> 特殊的唯一索引，用于标识表中的唯一记录，通常是表的主键。</li>
+<li><strong>主键索引：</strong> 特殊的唯一索引，用于<strong>标识表中的唯一记录</strong>，通常是表的主键。</li>
 <li><strong>组合索引：</strong> 在多个列上创建的索引，可以提高多列条件查询的效率。</li>
 <li><strong>全文索引：</strong> 用于全文搜索的索引类型，可以在文本列上进行高效的全文搜索。</li>
 </ol>
 <p>在项目开发中，合理使用索引可以显著提高数据库的查询性能。以下是一些项目开发中使用索引的常见场景和技巧：</p>
 <ol>
-<li><strong>分析查询需求：</strong> 在设计数据库表结构时，需要分析项目的查询需求，确定哪些字段经常被用于查询，以及哪些查询是频繁的。</li>
+<li><strong>分析查询需求：</strong> 在设计数据库表结构时，需要分析项目的查询需求，确定<strong>哪些字段经常被用于查询</strong>，以及<strong>哪些查询</strong>是频繁的。</li>
 <li><strong>选择合适的索引类型：</strong> 根据查询的类型和频率，选择合适的索引类型，如普通索引、唯一索引、组合索引等。</li>
 <li><strong>避免过度索引：</strong> 不要为每个列都创建索引，过多的索引可能会增加写操作的成本，影响数据的插入和更新性能。</li>
 <li><strong>优化查询语句：</strong> 编写优化的查询语句，避免全表扫描和不必要的排序操作，以提高查询性能。</li>

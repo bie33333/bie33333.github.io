@@ -173,20 +173,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>并发：并发（Concurrent），在 操作系统 中，是指一个时间段中有几个程序都处于已启动运行到运行完毕之间，且这几个程序都是在同一个处理机上运行。 并行：并行（Parallel），当系统有一个以上CPU时，当一个CPU执行一个进程时，另一个CPU可以执行另一个进程，两个进程互不抢占CPU资源，可以同时进行，这种方式我们称之为并行 (Parallel)。</p>
-<p>Concurrent: Concurrent (Concurrent), in the operating system, refers to a period of time in which several programs are in the process of starting and running to the end of the run, and these programs are running on the same processor. Parallel: Parallel (Parallel), when the system has more than one CPU, when a CPU executes a process, another CPU can execute another process, the two processes do not seize each other’s CPU resources, can be carried out at the same time, this way we call parallel (Parallel)</p>
+        <p>并发：并发（Concurrent），在 操作系统 中，是指一个时间段中有几个程序都处于已启动运行到运行完毕之间，且这几个程序都是在同一个处理机上运行。</p>
+<p> 并行：并行（Parallel），当系统有一个以上CPU时，当一个CPU执行一个进程时，另一个CPU可以执行另一个进程，两个进程互不抢占CPU资源，可以同时进行，这种方式我们称之为并行 (Parallel)。</p>
+<p><strong>Concurrent</strong>: in the operating system, refers to a period of time in which several programs are in the process of starting and running to the end of the run, and these programs are running on the same processor.</p>
+<p><strong>Parallel</strong> (Parallel), when the system has more than one CPU, when a CPU executes a process, another CPU can execute another process, the two processes do not seize each other’s CPU resources, can be carried out at the same time, this way we call parallel (Parallel)</p>
 <p>\1. 多线程中synchronize关键字的认识 </p>
-<p>synchronize关键字是Java中用于实现同步的关键字，它可以保证多个线程在访问共享资源时，同一时刻只有一个线程能够访问。synchronize关键字可以修饰方法或者作为代码块的一部分。当一个线程访问一个使用synchronize修饰的方法或代码块时，它会获取到一个锁，其他线程需要等待这个锁被释放后才能继续访问。这样可以避免多线程环境下的数据损坏和数据不一致问题。</p>
+<p>synchronize关键字是Java中用于实现同步的关键字，它可以保证多个线程在访问共享资源时，同一时刻只有一个线程能够访问。synchronize关键字可以修饰<strong>方法</strong>或者作为<strong>代码块</strong>的一部分。当一个线程访问一个使用synchronize修饰的方法或代码块时，它会获取到一个<strong>锁</strong>，其他线程需要等待这个锁被释放后才能继续访问。这样可以避免多线程环境下的<strong>数据损坏</strong>和<strong>数据不一致</strong>问题。</p>
 <p>\1.The synchronize keyword is a keyword used to achieve synchronization in Java. It can ensure that when multiple threads access shared resources, only one thread can access them at the same time. The synchronize keyword can modify a <strong>method</strong> or be part of a <strong>code block</strong>. When a thread accesses a method or code block modified with synchronize, it will acquire a lock, and other threads need to wait for the lock to be released before they can continue to access it. This can avoid data corruption and inconsistency problems in multi-threaded environments.</p>
-<p> \2. final关键字 final关键字在Java中有以下几个用途： - 修饰类：表示该类<strong>不能被继承</strong>； - 修饰方法：表示该方法<strong>不能被子类重写</strong>； - 修饰变量：表示该变量的值<strong>只能被赋值一次，即常量</strong>。 </p>
+<p> \2. final关键字 final关键字在Java中有以下几个用途：</p>
+<p>​	修饰类：表示该类<strong>不能被继承</strong>；<br>​	修饰方法：表示该方法<strong>不能被子类重写</strong><br>​	修饰变量：表示该变量的值<strong>只能被赋值一次，即常量</strong>。 </p>
 <p>The final keyword has the following uses in Java:</p>
-<ul>
-<li>Modified class: indicates that the class ** cannot be <strong>inherited</strong> <strong>;</strong></li>
-</ul>
-<p>** - Modified method: indicates that the method ** cannot be <strong>overridden by subclasses</strong> **;</p>
-<ul>
-<li>Modified variables : Indicates that the value of this variable can only be <strong>assigned once</strong>, that is, a const.</li>
-</ul>
         
           <a class="article-more-a" href="/2024/03/13/HSBC/#more">more >></a>
         
