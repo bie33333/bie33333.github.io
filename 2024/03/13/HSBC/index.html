@@ -16,7 +16,7 @@
 <meta property="og:description" content="并发：并发（Concurrent），在 操作系统 中，是指一个时间段中有几个程序都处于已启动运行到运行完毕之间，且这几个程序都是在同一个处理机上运行。 并行：并行（Parallel），当系统有一个以上CPU时，当一个CPU执行一个进程时，另一个CPU可以执行另一个进程，两个进程互不抢占CPU资源，可以同时进行，这种方式我们称之为并行 (Parallel)。 Concurrent: Concurre">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-12T16:02:42.000Z">
-<meta property="article:modified_time" content="2024-03-14T04:27:32.945Z">
+<meta property="article:modified_time" content="2024-03-14T07:41:24.752Z">
 <meta property="article:author" content="bie33333">
 <meta property="article:tag" content="面经">
 <meta name="twitter:card" content="summary">
@@ -209,7 +209,12 @@
 <p>****DevOps是一种重视软件开发人员和IT运维技术人员之间沟通与协作的文化和实践，旨在加速软件交付的速度和提高质量****。 DevOps强调的是通过自动化、持续集成（CI）、持续交付（CD）以及有效的沟通来整合软件开发和运维的过程。它的目标是创建一个能够快速响应市场变化和客户需求的灵活环境。在DevOps实践中，开发、测试和运维团队紧密合作，以确保软件从编码到部署的每个阶段都尽可能地自动化和无缝对接，最终实现快速、可靠的软件发布。 </p>
 <p>****Docker是一个开源的应用容器引擎****。 它允许开发者将应用及其依赖打包成一个标准化的单元，即容器，这样可以确保应用在任何环境中都能够一致地运行。而Kubernetes（通常简称为k8s）是一个容器编排系统，用于自动部署、扩展和管理容器化应用。它可以看作是对Docker的补充，通过Kubernetes，可以大规模地管理和协调多个Docker容器，实现更加复杂的应用部署和管理。</p>
 <p> ****Scrum是一种迭代式增量软件开发过程，属于敏捷开发方法的一种框架****。 它通过设定时间固定的迭代周期（称为冲刺或Sprint），使开发团队能够集中精力完成一组既定的开发任务。Scrum中定义了明确的角色，包括Scrum主管、产品负责人和开发团队，每个角色都有其独特的职责和作用。通过频繁的评估和反馈机制，Scrum旨在提高开发过程的透明度并促进团队合作，以便更快地交付高质量的软件产品。 综上所述，对于您面试的JAVA开发职位，理解DevOps文化、熟悉Docker和Kubernetes技术以及Scrum方法论都是非常有价值的。这些知识点不仅能帮助您更好地融入敏捷开发环境，还能提升您在软件交付过程中的协作和效率。</p>
-<p>数据库的三范式（3NF）是数据库设计的一个标准，用于减少数据冗余和改善数据完整性。三范式建立在两个更早的范式之上：第一范式（1NF）和第二范式（2NF）。下面是对每个范式的简要解释： 1. 第一范式（1NF）： - 要求表的每一列都是不可分割的基本数据项，即每个字段都是原子性的。 - 表中的所有记录都应该是唯一的，通常通过主键来实现。 2. 第二范式（2NF）： - 在满足1NF的基础上，要求表中的数据不包含部分依赖，即非主键列必须完全依赖于主键。 - 如果一个表有复合主键（由多个字段组成），那么其他字段不能只依赖于这个复合主键的一部分。 3. 第三范式（3NF）： - 在满足2NF的基础上，要求表中的数据不包含传递依赖，即非主键列必须直接依赖于主键，而不是通过其他字段间接依赖。 - 这有助于进一步减少数据冗余，因为每个字段只在一个地方存储，并且在其他地方通过外键引用。 </p>
+<p>数据库的三范式（3NF）是数据库设计的一个标准，用于减少数据冗余和改善数据完整性。三范式建立在两个更早的范式之上：第一范式（1NF）和第二范式（2NF）。下面是对每个范式的简要解释： </p>
+<ol>
+<li>第一范式（1NF）： - 要求表的每一列都是<strong>不可分割的基本数据项</strong>，即每个字段都是原子性的。 - 表中的所有记录都应该是唯一的，通常通过主键来实现。</li>
+<li>第二范式（2NF）： - 在满足1NF的基础上，要求表中的数据<strong>不包含部分依赖，即非主键列必须完全依赖于主键</strong>。 - 如果一个表有复合主键（由多个字段组成），那么其他字段不能只依赖于这个复合主键的一部分。</li>
+<li>第三范式（3NF）： - 在满足2NF的基础上，<strong>要求表中的数据不包含传递依赖，即非主键列必须直接依赖于主键，而不是通过其他字段间接依赖</strong>。 - 这有助于进一步减少数据冗余，因为每个字段只在一个地方存储，并且在其他地方通过外键引用。</li>
+</ol>
 <p>对数据存储的看法： 数据存储是任何信息系统的核心。选择合适的数据存储解决方案对于系统的性能、可扩展性、维护性和成本都至关重要。随着技术的发展，我们有了更多的选择，包括传统的关系型数据库、NoSQL数据库、分布式数据库以及新型的存储技术如对象存储和时间序列数据库等。每种类型的数据库都有其适用的场景，因此在设计系统时需要根据数据的类型、访问模式和业务需求来选择合适的数据库。 </p>
 <p>数据库未来发展趋势的看法： - 云原生数据库：随着云计算的普及，越来越多的数据库服务将设计为云原生，提供更高的可用性、弹性和自动化管理。 - 多模型数据库：为了处理不同类型的数据和多样化的工作负载，多模型数据库将成为趋势，它们可以同时支持文档、键值、图形等多种数据模型。 - 实时分析和处理：随着物联网和边缘计算的发展，数据库将更多地集成实时数据分析和处理能力，以支持即时决策。 - 自动化和智能化：数据库管理和维护将更加自动化，利用人工智能来优化性能、预防故障和安全威胁。</p>
 <p> 在实际工作中使用过的数据库： 这个部分取决于你的个人经验。常见的数据库包括MySQL、PostgreSQL、Oracle、Microsoft SQL Server、MongoDB、Redis、Cassandra等。如果你有实际使用过这些或其他数据库的经验，可以根据你的职责和项目需求来描述。例如，你可能在项目中使用MySQL进行CRUD操作，使用Redis作为缓存数据库来提高系统性能，或者使用MongoDB来存储非结构化数据等。</p>
@@ -250,6 +255,50 @@
 <li>上一个工作的工作内容、项目技术以及离职原因：我在上一家公司主要从事后端开发工作，参与了多个项目的开发，涉及的技术有Java、Spring Boot、MySQL等。离职原因是寻求更高的发展机会。 </li>
 <li>数据结构算法代码：请根据具体问题编写相应的代码。</li>
 </ol>
+<h1 id="rabbitMQ"><a href="#rabbitMQ" class="headerlink" title="rabbitMQ"></a>rabbitMQ</h1><p><strong>关于 RabbitMQ：</strong></p>
+<p>RabbitMQ 是一个开源的消息代理软件，它实现了高级消息队列协议（AMQP），用于在应用程序之间传递消息。它是一个轻量级、可靠、灵活、易于部署和扩展的消息队列系统。RabbitMQ 提供了强大的消息传递机制，可以在不同应用之间进行通信，并且能够处理高并发的情况。</p>
+<p>RabbitMQ 的核心概念包括：</p>
+<ol>
+<li><strong>消息：</strong> 即需要传递的数据单元。</li>
+<li><strong>生产者：</strong> 生产消息并将其发送到 RabbitMQ 中的队列。</li>
+<li><strong>消费者：</strong> 从队列中接收消息并进行处理。</li>
+<li><strong>队列：</strong> 用于存储消息的缓冲区。</li>
+<li><strong>交换机：</strong> 用于将消息路由到一个或多个队列中。</li>
+</ol>
+<p><strong>关于 Java 中如何使用 RabbitMQ 实现消息队列：</strong></p>
+<p>在 Java 中使用 RabbitMQ 实现消息队列通常需要以下步骤：</p>
+<ol>
+<li><strong>安装 RabbitMQ：</strong> 首先需要在你的环境中安装 RabbitMQ 服务器。你可以从 RabbitMQ 官方网站下载并安装它。</li>
+<li><strong>添加 RabbitMQ 客户端库：</strong> 在你的 Java 项目中添加 RabbitMQ 的客户端库，你可以使用 Maven 或 Gradle 等构建工具来管理依赖关系。通常情况下，你需要添加 <code>amqp-client</code> 依赖。</li>
+<li><strong>创建连接和通道：</strong> 在 Java 代码中，首先需要创建与 RabbitMQ 服务器的连接，并且创建一个通道用于发送和接收消息。</li>
+<li><strong>声明队列和交换机：</strong> 在通道上声明需要使用的队列和交换机。</li>
+<li><strong>发送消息：</strong> 在生产者端，通过通道将消息发送到指定的队列或交换机。</li>
+<li><strong>接收消息：</strong> 在消费者端，设置一个消费者来监听指定队列中的消息，并在接收到消息时进行处理。</li>
+<li><strong>关闭连接和通道：</strong> 在程序结束时，需要关闭与 RabbitMQ 的连接和通道。</li>
+</ol>
+<h1 id="JAVA-IO和NIO的区别"><a href="#JAVA-IO和NIO的区别" class="headerlink" title="JAVA IO和NIO的区别"></a>JAVA IO和NIO的区别</h1><p>Java I&#x2F;O（Input&#x2F;Output，输入&#x2F;输出）和 Java NIO（New I&#x2F;O，新 I&#x2F;O）都是 Java 中用于处理数据的机制，但它们之间有一些重要的区别：</p>
+<h2 id="Java-I-O（java-io）："><a href="#Java-I-O（java-io）：" class="headerlink" title="Java I&#x2F;O（java.io）："></a><strong>Java I&#x2F;O（java.io）：</strong></h2><p>Java I&#x2F;O 是 Java 中最早的 I&#x2F;O 处理机制，它基于流（Stream）的概念。Java I&#x2F;O 是阻塞的，意味着当执行 I&#x2F;O 操作时，线程会一直等待直到操作完成。</p>
+<p>Java I&#x2F;O 主要包括以下几个核心类：</p>
+<ul>
+<li>InputStream 和 OutputStream：用于读取和写入字节数据。</li>
+<li>Reader 和 Writer：用于读取和写入字符数据。</li>
+<li>FileInputStream、FileOutputStream、FileReader、FileWriter 等类：用于操作文件。</li>
+<li>Socket、ServerSocket 等类：用于网络编程。</li>
+</ul>
+<p>Java I&#x2F;O 的缺点是性能可能不够高效，尤其是在需要处理大量并发连接的情况下，因为它是阻塞式的，每个连接都需要一个单独的线程。</p>
+<h2 id="Java-NIO（java-nio）："><a href="#Java-NIO（java-nio）：" class="headerlink" title="Java NIO（java.nio）："></a><strong>Java NIO（java.nio）：</strong></h2><p>Java NIO 是在 JDK 1.4 中引入的新的 I&#x2F;O 处理机制。NIO 提供了非阻塞的 I&#x2F;O 操作，它通过通道（Channel）和缓冲区（Buffer）来处理数据。这使得一个线程可以同时处理多个连接，从而提高了系统的效率。</p>
+<p>Java NIO 主要包括以下几个核心类和接口：</p>
+<ul>
+<li>Channel：用于读取和写入数据的抽象类，包括 FileChannel、SocketChannel、ServerSocketChannel、DatagramChannel 等。</li>
+<li>Buffer：用于存储数据的缓冲区，包括 ByteBuffer、CharBuffer、IntBuffer 等。</li>
+<li>Selector：用于多路复用的选择器，可以监听多个通道上的事件，只有在有事件发生时才会唤醒线程。</li>
+</ul>
+<p>Java NIO 虽然相比 Java I&#x2F;O 更为高效和灵活，但也更为复杂，需要更多的代码来实现相同的功能。因此，在选择 Java I&#x2F;O 还是 Java NIO 时，需要根据具体的需求和场景来决定。通常来说，对于简单的 I&#x2F;O 操作，可以使用 Java I&#x2F;O；而对于需要处理大量并发连接或需要更高性能的情况，则可以考虑使用 Java NIO。</p>
+<p>MYSQL建表需要注意什么</p>
+<p>SpringBoot 和Spring</p>
+<p>数据库三范式</p>
+<p>数据库事务</p>
+<p>索引</p>
 
       
 
